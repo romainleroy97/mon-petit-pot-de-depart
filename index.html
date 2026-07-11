@@ -1237,14 +1237,22 @@
   function sendWhatsapp(){
     const { prenom, lieu, dateStr, heure, mot } = getCalInfos();
     const dateFormatee = dateStr ? formatDateFr(new Date(dateStr + 'T00:00:00')) : '[date]';
-    const siteUrl = window.location.origin + window.location.pathname;
 
-    let msg = '🎉 *Pot de départ de ' + prenom + '!*\n\n';
+    // Construire le lien vers la page d'invitation
+    const base = 'https://romainleroy97.github.io/mon-petit-pot-de-depart/invite/';
+    const params = new URLSearchParams();
+    if(prenom) params.set('prenom', prenom);
+    if(dateStr) params.set('date', dateStr);
+    if(heure) params.set('heure', heure);
+    if(lieu) params.set('lieu', lieu);
+    if(mot) params.set('mot', mot);
+    const inviteUrl = base + '?' + params.toString();
+
+    let msg = '🎉 *Pot de départ de ' + (prenom || 'quelqu\'un') + '!*\n\n';
     msg += '📅 ' + dateFormatee + ' à ' + heure + '\n';
     if(lieu) msg += '📍 ' + lieu + '\n';
     if(mot) msg += '\n_« ' + mot + ' »_\n';
-    msg += '\nPasse faire coucou ! 👋\n\n';
-    msg += siteUrl;
+    msg += '\n👇 Save the date :\n' + inviteUrl;
 
     const url = 'https://wa.me/?text=' + encodeURIComponent(msg);
     window.open(url, '_blank');

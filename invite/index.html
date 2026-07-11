@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="page-title">Pot de départ — Mon petit pot de départ</title>
+<meta id="og-title" property="og:title" content="Pot de départ 🎉">
+<meta id="og-desc" property="og:description" content="Tu es invité·e !">
+<meta property="og:image" content="https://romainleroy97.github.io/mon-petit-pot-de-depart/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://romainleroy97.github.io/mon-petit-pot-de-depart/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-dark:#1F1147;
+    --bg-paper:#FFF4E3;
+    --coral:#FF5A36;
+    --yellow:#FFC93C;
+    --pink:#FF3D8A;
+    --teal:#00B88A;
+    --ink:#1F1147;
+    --paper-text:#4A3D78;
+    --light-text:#FFF4E3;
+    --font-display:'Bricolage Grotesque', sans-serif;
+    --font-body:'Inter', sans-serif;
+    --font-hand:'Caveat', cursive;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:var(--font-body); background:var(--bg-dark); min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:24px; -webkit-font-smoothing:antialiased;}
+
+  /* Confettis flottants */
+  .confetti{position:fixed; z-index:0; animation:float 4.5s ease-in-out infinite; pointer-events:none;}
+  @keyframes float{0%,100%{transform:translateY(0) rotate(var(--r,0deg));} 50%{transform:translateY(-16px) rotate(var(--r,0deg));}}
+
+  /* Carte principale */
+  .card{position:relative; z-index:1; background:linear-gradient(135deg, var(--coral) 0%, var(--pink) 100%); border:3px solid var(--ink); border-radius:24px; padding:48px 40px; max-width:480px; width:100%; text-align:center; box-shadow:10px 10px 0 var(--ink); animation:popIn .5s cubic-bezier(.34,1.56,.64,1) both;}
+  @keyframes popIn{from{opacity:0; transform:scale(.85) translateY(20px);} to{opacity:1; transform:scale(1) translateY(0);}}
+
+  /* Pin */
+  .pin{width:22px; height:22px; border-radius:50%; background:var(--yellow); border:3px solid var(--ink); margin:0 auto 20px; display:block;}
+
+  .eyebrow{font-family:var(--font-hand); font-size:26px; color:var(--light-text); margin-bottom:12px; opacity:.95;}
+  .name{font-family:var(--font-display); font-weight:800; font-size:clamp(30px,7vw,46px); color:var(--light-text); line-height:1.1; margin-bottom:6px;}
+  .invite-sub{font-family:var(--font-display); font-weight:500; font-size:17px; color:rgba(255,244,227,.85); margin-bottom:28px;}
+
+  /* Détails */
+  .details{background:rgba(31,17,71,.25); border-radius:16px; padding:18px 20px; margin-bottom:28px; display:flex; flex-direction:column; gap:10px;}
+  .detail-row{display:flex; align-items:center; gap:10px; font-size:15px; color:var(--light-text);}
+  .detail-row .icon{font-size:20px; flex-shrink:0;}
+  .detail-row .text{text-align:left; line-height:1.4;}
+  .detail-row .text strong{font-weight:600; display:block;}
+
+  /* Petit mot */
+  .mot{font-family:var(--font-hand); font-size:24px; color:var(--light-text); margin-bottom:28px; opacity:.9; font-style:italic;}
+
+  /* Bouton Save the date */
+  .btn-save{font-family:var(--font-display); font-weight:800; font-size:17px; background:var(--ink); color:var(--light-text); border:3px solid var(--ink); border-radius:100px; padding:16px 36px; cursor:pointer; width:100%; transition:transform .15s ease, box-shadow .15s ease; box-shadow:4px 4px 0 rgba(0,0,0,.3); display:flex; align-items:center; justify-content:center; gap:10px;}
+  .btn-save:hover{transform:translate(-2px,-2px); box-shadow:6px 6px 0 rgba(0,0,0,.3);}
+  .btn-save:active{transform:translate(0,0); box-shadow:2px 2px 0 rgba(0,0,0,.3);}
+
+  /* Confirmation */
+  .confirm{display:none; margin-top:14px; font-size:13px; color:rgba(255,244,227,.8); animation:fadeIn .3s ease;}
+  @keyframes fadeIn{from{opacity:0;} to{opacity:1;}}
+
+  /* Footer */
+  .footer-link{margin-top:32px; font-size:13px; color:rgba(255,244,227,.5); text-decoration:none; position:relative; z-index:1;}
+  .footer-link:hover{color:rgba(255,244,227,.8);}
+
+  /* Pas de params */
+  .empty-state{color:var(--light-text); text-align:center; z-index:1; position:relative;}
+  .empty-state h1{font-family:var(--font-display); font-weight:800; font-size:28px; margin-bottom:12px;}
+  .empty-state p{font-size:16px; opacity:.7;}
+
+  @media(max-width:500px){
+    .card{padding:36px 24px;}
+    body{padding:16px;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<!-- Confettis -->
+<span class="confetti" style="top:8%; left:5%; --r:-12deg;" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#FFC93C"/></svg></span>
+<span class="confetti" style="top:70%; left:8%; --r:20deg; animation-delay:.6s;" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#00B88A"/></svg></span>
+<span class="confetti" style="top:15%; right:6%; --r:15deg; animation-delay:1.1s;" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#FFF4E3"/></svg></span>
+<span class="confetti" style="top:75%; right:7%; --r:-18deg; animation-delay:.3s;" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#FFC93C"/></svg></span>
+<span class="confetti" style="top:50%; left:3%; --r:8deg; animation-delay:.9s;" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#FF3D8A"/></svg></span>
+<span class="confetti" style="top:40%; right:4%; --r:-8deg; animation-delay:1.4s;" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#FF5A36"/></svg></span>
+
+<div id="invite-content"></div>
+
+<a class="footer-link" href="https://romainleroy97.github.io/mon-petit-pot-de-depart/">← Organise ton propre pot de départ</a>
+
+<script>
+  function getParams(){
+    const params = new URLSearchParams(window.location.search);
+    return {
+      prenom: params.get('prenom') || '',
+      date: params.get('date') || '',
+      heure: params.get('heure') || '',
+      lieu: params.get('lieu') || '',
+      mot: params.get('mot') || ''
+    };
+  }
+
+  function formatDateFr(dateStr){
+    if(!dateStr) return '';
+    const d = new Date(dateStr + 'T00:00:00');
+    return d.toLocaleDateString('fr-FR', { weekday:'long', day:'numeric', month:'long', year:'numeric' });
+  }
+
+  function generateICS(prenom, dateStr, heure, lieu, mot){
+    const [year, month, day] = dateStr.split('-');
+    const [hh, mm] = heure.split(':');
+    const dtStart = year + month + day + 'T' + hh + mm + '00';
+    const endHour = String(parseInt(hh) + 2).padStart(2, '0');
+    const dtEnd = year + month + day + 'T' + endHour + mm + '00';
+
+    return [
+      'BEGIN:VCALENDAR',
+      'VERSION:2.0',
+      'PRODID:-//Mon petit pot de départ//FR',
+      'BEGIN:VEVENT',
+      'DTSTART:' + dtStart,
+      'DTEND:' + dtEnd,
+      'SUMMARY:🎉 Pot de départ de ' + prenom,
+      'LOCATION:' + lieu,
+      'DESCRIPTION:' + (mot ? '« ' + mot + ' »' : 'Passe faire coucou !'),
+      'END:VEVENT',
+      'END:VCALENDAR'
+    ].join('\r\n');
+  }
+
+  function downloadICS(){
+    const { prenom, date, heure, lieu, mot } = getParams();
+    if(!date || !heure){
+      alert('Les informations de l\'événement sont incomplètes.');
+      return;
+    }
+    const ics = generateICS(prenom, date, heure, lieu, mot);
+    const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'pot-de-depart-' + (prenom || 'invite') + '.ics';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+
+    const confirm = document.getElementById('save-confirm');
+    if(confirm){ confirm.style.display = 'block'; }
+  }
+
+  function render(){
+    const { prenom, date, heure, lieu, mot } = getParams();
+    const container = document.getElementById('invite-content');
+
+    if(!prenom && !date){
+      container.innerHTML = '<div class="empty-state"><h1>🎉</h1><h1>Invitation introuvable</h1><p>Ce lien d\'invitation semble incomplet.</p></div>';
+      return;
+    }
+
+    const dateFormatee = formatDateFr(date);
+    const prenomDisplay = prenom || 'quelqu\'un';
+
+    // Mise à jour du titre de la page
+    document.getElementById('page-title').textContent = 'Pot de départ de ' + prenomDisplay + ' 🎉';
+
+    container.innerHTML = `
+      <div class="card">
+        <span class="pin"></span>
+        <p class="eyebrow">C'est mon pot de départ !</p>
+        <h1 class="name">${prenomDisplay}</h1>
+        <p class="invite-sub">vous invite à son pot de départ</p>
+
+        <div class="details">
+          ${dateFormatee ? `<div class="detail-row"><span class="icon">📅</span><div class="text"><strong>${dateFormatee}</strong></div></div>` : ''}
+          ${heure ? `<div class="detail-row"><span class="icon">🕕</span><div class="text"><strong>${heure}</strong></div></div>` : ''}
+          ${lieu ? `<div class="detail-row"><span class="icon">📍</span><div class="text"><strong>${lieu}</strong></div></div>` : ''}
+        </div>
+
+        ${mot ? `<p class="mot">« ${mot} »</p>` : ''}
+
+        <button class="btn-save" onclick="downloadICS()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          Save the date 🎉
+        </button>
+        <p class="confirm" id="save-confirm">✅ Ajouté à ton calendrier !</p>
+      </div>
+    `;
+  }
+
+  render();
+</script>
+
+</body>
+</html>
