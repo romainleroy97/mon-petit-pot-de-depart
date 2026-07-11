@@ -1,0 +1,1475 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mon petit pot de départ — Bien partir, ça se prépare</title>
+<meta name="description" content="Le kit complet pour quitter ton job avec panache : négociation, lettre de démission, annonce et pot de départ.">
+<meta property="og:title" content="Mon petit pot de départ — Bien partir, ça se prépare">
+<meta property="og:description" content="De la négociation au pot de départ, tout ce qu'il faut pour claquer la porte avec classe.">
+<meta property="og:image" content="https://romainleroy97.github.io/mon-petit-pot-de-depart/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://romainleroy97.github.io/mon-petit-pot-de-depart/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://romainleroy97.github.io/mon-petit-pot-de-depart/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-dark:#1F1147;
+    --bg-paper:#FFF4E3;
+    --coral:#FF5A36;
+    --yellow:#FFC93C;
+    --pink:#FF3D8A;
+    --teal:#00B88A;
+    --ink:#1F1147;
+    --paper-text:#4A3D78;
+    --light-text:#FFF4E3;
+    --font-display:'Bricolage Grotesque', sans-serif;
+    --font-body:'Inter', sans-serif;
+    --font-hand:'Caveat', cursive;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--font-body); color:var(--ink); background:var(--bg-paper); line-height:1.6; -webkit-font-smoothing:antialiased;}
+  a{color:inherit;}
+  svg{display:block;}
+  :focus-visible{outline:3px solid var(--pink); outline-offset:3px;}
+
+  /* Header */
+  header{position:sticky; top:0; z-index:50; background:var(--bg-paper); border-bottom:2px solid var(--ink);}
+  .header-inner{display:flex; align-items:center; justify-content:space-between; padding:16px 24px; max-width:1080px; margin:0 auto;}
+  .logo{display:flex; align-items:center; gap:10px; font-family:var(--font-display); font-weight:700; font-size:18px; text-decoration:none; cursor:pointer;}
+  .logo-badge{width:34px; height:34px; border-radius:50%; background:var(--coral); border:2px solid var(--ink); display:flex; align-items:center; justify-content:center; flex-shrink:0;}
+  .cta-btn{font-family:var(--font-display); font-weight:700; font-size:14px; background:var(--ink); color:var(--bg-paper); padding:10px 22px; border-radius:100px; text-decoration:none; border:2px solid var(--ink); transition:transform .15s ease; display:inline-block; cursor:pointer;}
+  .cta-btn:hover{transform:translate(-2px,-2px);}
+
+  /* Hero (home) */
+  .hero{background:var(--bg-dark); color:var(--light-text); position:relative; overflow:hidden; padding:80px 24px 30px;}
+  .hero-inner{max-width:700px; margin:0 auto; text-align:center; position:relative; z-index:2;}
+  .eyebrow{font-family:var(--font-hand); font-size:24px; color:var(--yellow);}
+  h1{font-family:var(--font-display); font-weight:800; font-size:clamp(34px,6vw,60px); line-height:1.1; margin:14px 0 22px;}
+  h1 .highlight{background:var(--coral); color:var(--ink); padding:2px 12px; border-radius:8px; box-decoration-break:clone; -webkit-box-decoration-break:clone;}
+  .hero p{font-size:18px; color:rgba(255,244,227,.82); max-width:480px; margin:0 auto 34px;}
+  .confetti{position:absolute; z-index:1; animation:float 4.5s ease-in-out infinite;}
+  @keyframes float{0%,100%{transform:translateY(0) rotate(var(--r,0deg));} 50%{transform:translateY(-16px) rotate(var(--r,0deg));}}
+
+  /* Journey (home) */
+  .journey{padding:20px 24px 90px;}
+  .cards-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:22px; max-width:1080px; margin:0 auto;}
+  .card{background:#fff; border:2px solid var(--ink); border-radius:16px; padding:22px 20px; position:relative; box-shadow:6px 6px 0 var(--ink); transition:transform .2s ease, box-shadow .2s ease; text-decoration:none; display:block; cursor:pointer;}
+  .card:hover{transform:translate(-4px,-4px) rotate(0deg); box-shadow:10px 10px 0 var(--ink);}
+  .card:nth-child(1){transform:rotate(-2deg); --pin:var(--coral);}
+  .card:nth-child(2){transform:rotate(1.5deg); --pin:var(--yellow);}
+  .card:nth-child(3){transform:rotate(-1deg); --pin:var(--teal);}
+  .card:nth-child(4){transform:rotate(2deg); --pin:var(--pink);}
+  .card::before{content:''; position:absolute; top:-11px; left:50%; transform:translateX(-50%); width:18px; height:18px; border-radius:50%; background:var(--pin); border:2px solid var(--ink);}
+  .card-number{font-family:var(--font-display); font-weight:800; font-size:12px; letter-spacing:.06em; color:var(--paper-text); text-transform:uppercase;}
+  .card-icon{width:42px; height:42px; border-radius:12px; background:var(--bg-paper); border:2px solid var(--ink); display:flex; align-items:center; justify-content:center; margin:14px 0 16px;}
+  .card h3{font-family:var(--font-display); font-weight:700; font-size:19px; margin-bottom:8px;}
+  .card p{font-size:14px; color:var(--paper-text); margin-bottom:18px;}
+  .card-link{font-family:var(--font-display); font-weight:700; font-size:14px; color:var(--ink); display:inline-flex; align-items:center; gap:6px;}
+
+  /* Why (home) */
+  .why{background:var(--ink); color:var(--light-text); padding:84px 24px;}
+  .why-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:36px; max-width:900px; margin:0 auto;}
+  .why-item h3{font-family:var(--font-display); font-weight:700; font-size:18px; color:var(--yellow); margin-bottom:8px;}
+  .why-item p{font-size:14px; color:rgba(255,244,227,.78);}
+
+  /* Step hero (étape 1) */
+  .step-hero{background:var(--bg-dark); color:var(--light-text); padding:64px 24px 56px; text-align:center;}
+  .step-hero h1{font-size:clamp(30px,5vw,48px); margin:12px 0 16px;}
+  .step-hero p{font-size:17px; color:rgba(255,244,227,.82); max-width:520px; margin:0 auto;}
+
+  /* Step blocks (étape 1) */
+  main{max-width:960px; margin:0 auto; padding:56px 24px 100px; display:flex; flex-direction:column; gap:40px;}
+  .two-col{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:28px;}
+  .block{background:#fff; border:2px solid var(--ink); border-radius:16px; padding:28px; position:relative; box-shadow:6px 6px 0 var(--ink);}
+  .block::before{content:''; position:absolute; top:-11px; left:36px; width:18px; height:18px; border-radius:50%; background:var(--pin); border:2px solid var(--ink);}
+  .block-1{--pin:var(--coral);}
+  .block-2{--pin:var(--yellow);}
+  .block-3{--pin:var(--teal); max-width:640px; margin:0 auto; width:100%;}
+  .block h2{font-family:var(--font-display); font-weight:700; font-size:20px; margin-bottom:6px;}
+  .block .block-sub{font-size:14px; color:var(--paper-text); margin-bottom:22px;}
+
+  .field{margin-bottom:16px;}
+  .field label{display:block; font-size:13px; font-weight:500; margin-bottom:6px;}
+  .field input{width:100%; height:44px; border:2px solid var(--ink); border-radius:10px; padding:0 14px; font-family:var(--font-body); font-size:15px; background:var(--bg-paper); color:var(--ink);}
+  .field input:focus{outline:3px solid var(--pink); outline-offset:1px;}
+  .calc-results{margin-top:22px; border-top:2px dashed var(--ink); padding-top:18px; display:flex; flex-direction:column; gap:10px;}
+  .calc-row{display:flex; align-items:baseline; justify-content:space-between; gap:12px;}
+  .calc-row .label{font-size:13px; color:var(--paper-text);}
+  .calc-row .value{font-family:var(--font-display); font-weight:800; font-size:20px;}
+  .calc-note{font-size:12px; color:var(--paper-text); margin-top:14px;}
+
+  .tip-badge{display:inline-block; font-family:var(--font-display); font-weight:700; font-size:12px; background:var(--yellow); color:#4A3400; padding:4px 12px; border-radius:100px; margin-bottom:14px; border:2px solid var(--ink);}
+  .tip-text{font-size:17px; line-height:1.6;}
+  .tip-footer{font-size:12px; color:var(--paper-text); margin-top:16px;}
+
+  .chat-thread{display:flex; flex-direction:column; gap:10px; max-height:280px; overflow-y:auto; margin-bottom:16px; padding-right:4px;}
+  .chat-bubble{max-width:80%; padding:10px 14px; border-radius:14px; font-size:14px; line-height:1.5; border:2px solid var(--ink);}
+  .chat-bubble.bot{align-self:flex-start; background:var(--bg-paper); border-bottom-left-radius:4px;}
+  .chat-bubble.user{align-self:flex-end; background:var(--teal); color:#04342C; border-bottom-right-radius:4px;}
+  .chat-input-row{display:flex; gap:10px;}
+  .chat-input-row input{flex:1; height:44px; border:2px solid var(--ink); border-radius:10px; padding:0 14px; font-family:var(--font-body); font-size:14px; background:var(--bg-paper); color:var(--ink);}
+  .chat-input-row input:focus{outline:3px solid var(--pink); outline-offset:1px;}
+  .send-btn{font-family:var(--font-display); font-weight:700; font-size:14px; background:var(--ink); color:var(--bg-paper); border:2px solid var(--ink); border-radius:10px; padding:0 20px; cursor:pointer;}
+  .send-btn:hover{background:var(--coral); border-color:var(--coral); color:var(--ink);}
+
+  /* Générateur de lettre (étape 2) */
+  .generator-grid{display:grid; grid-template-columns:1fr 1fr; gap:32px;}
+  .letter-preview{background:var(--bg-paper); border:2px dashed var(--ink); border-radius:12px; padding:20px; font-size:13px; white-space:pre-wrap; line-height:1.7; max-height:440px; overflow-y:auto;}
+  .checkbox-field{display:flex; align-items:center; gap:8px; margin-bottom:14px;}
+  .checkbox-field input{width:18px; height:18px; accent-color:var(--coral);}
+  .checkbox-field label{font-size:13px;}
+  .letter-actions{display:flex; gap:10px; margin-top:16px; flex-wrap:wrap;}
+  .btn-secondary{font-family:var(--font-display); font-weight:700; font-size:14px; background:transparent; color:var(--ink); border:2px solid var(--ink); border-radius:10px; padding:0 20px; height:40px; cursor:pointer;}
+  .btn-secondary:hover{background:var(--ink); color:var(--bg-paper);}
+  select.field-select{width:100%; height:44px; border:2px solid var(--ink); border-radius:10px; padding:0 14px; font-family:var(--font-body); font-size:15px; background:var(--bg-paper); color:var(--ink);}
+  .law-list{list-style:none; display:flex; flex-direction:column; gap:16px;}
+  .law-list li{font-size:15px; line-height:1.6; padding-left:26px; position:relative;}
+  .law-list li::before{content:''; position:absolute; left:0; top:6px; width:10px; height:10px; border-radius:50%; background:var(--teal); border:2px solid var(--ink);}
+  .law-list li:nth-child(2)::before{background:var(--coral);}
+  .law-list li:nth-child(3)::before{background:var(--yellow);}
+  .law-list li:nth-child(4)::before{background:var(--pink);}
+
+  @media (max-width:760px){
+    .generator-grid{grid-template-columns:1fr;}
+  }
+
+  .field textarea{width:100%; min-height:64px; border:2px solid var(--ink); border-radius:10px; padding:10px 14px; font-family:var(--font-body); font-size:15px; background:var(--bg-paper); color:var(--ink); resize:vertical;}
+  .field textarea:focus{outline:3px solid var(--pink); outline-offset:1px;}
+  .callout{background:var(--bg-paper); border:2px solid var(--ink); border-left:6px solid var(--pink); border-radius:10px; padding:12px 16px; font-size:13px; color:var(--paper-text); margin-bottom:20px;}
+
+  /* Étape 3 — outils niveau 1 (proches à distance) */
+  .tool-tabs{display:flex; gap:8px; margin-bottom:28px; flex-wrap:wrap;}
+  .tool-tab{font-family:var(--font-display); font-weight:700; font-size:13px; background:transparent; color:var(--ink); border:2px solid var(--ink); border-radius:100px; padding:8px 18px; cursor:pointer;}
+  .tool-tab.active{background:var(--ink); color:var(--bg-paper);}
+  .tool-panel{display:none;}
+  .tool-panel.active{display:block;}
+
+  /* GIF grid */
+  .gif-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:18px; max-height:400px; overflow-y:auto; padding:4px;}
+  .gif-item{position:relative; border:2px solid var(--ink); border-radius:10px; overflow:hidden; cursor:pointer; aspect-ratio:1/1; background:var(--bg-paper);}
+  .gif-item img{width:100%; height:100%; object-fit:cover; display:block;}
+  .gif-item:hover{transform:translate(-2px,-2px); box-shadow:4px 4px 0 var(--ink);}
+  .gif-actions{margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;}
+  .gif-preview-box{background:var(--bg-paper); border:2px dashed var(--ink); border-radius:12px; padding:16px; margin-top:16px; display:none;}
+  .gif-preview-box.visible{display:block;}
+  .gif-preview-box img{max-width:200px; border-radius:8px; border:2px solid var(--ink); display:block; margin-bottom:12px;}
+  .gif-preview-box .gif-url{font-family:monospace; font-size:12px; background:#fff; border:2px solid var(--ink); border-radius:8px; padding:8px 12px; word-break:break-all; margin-bottom:10px;}
+
+  /* Countdown */
+  .countdown-share{background:var(--bg-paper); border:2px dashed var(--ink); border-radius:12px; padding:16px; margin-top:16px; display:none;}
+  .countdown-share.visible{display:block;}
+  .countdown-share .share-url{font-family:monospace; font-size:12px; background:#fff; border:2px solid var(--ink); border-radius:8px; padding:8px 12px; word-break:break-all; margin-bottom:10px;}
+
+  /* Countdown standalone view */
+  .countdown-view{background:var(--bg-dark); color:var(--light-text); min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:40px 24px; text-align:center;}
+  .countdown-view h1{font-size:clamp(40px,7vw,72px); margin:20px 0 8px;}
+  .countdown-view .big-number{font-family:var(--font-display); font-weight:800; font-size:clamp(80px,20vw,180px); color:var(--yellow); line-height:1; margin:20px 0;}
+  .countdown-view .big-label{font-family:var(--font-hand); font-size:32px; color:var(--coral);}
+  .countdown-view .details{margin-top:30px; font-size:16px; color:rgba(255,244,227,.82);}
+  .countdown-view .cta-back{margin-top:40px;}
+
+  /* Mail second degré */
+  .mail-preview{background:var(--bg-paper); border:2px dashed var(--ink); border-radius:12px; padding:20px; font-size:14px; white-space:pre-wrap; line-height:1.7; max-height:440px; overflow-y:auto; margin-top:16px;}
+
+  /* Étape 4 — recherche de lieu */
+  .venue-search-row{display:flex; gap:10px; margin-top:14px; flex-wrap:wrap;}
+  .venue-search-row input{flex:1; min-width:200px;}
+  .venue-results{margin-top:20px; display:flex; flex-direction:column; gap:12px;}
+  .venue-card{background:var(--bg-paper); border:2px solid var(--ink); border-radius:12px; padding:16px 18px; display:flex; align-items:center; justify-content:space-between; gap:14px;}
+  .venue-card-info h4{font-family:var(--font-display); font-weight:700; font-size:15px; margin-bottom:2px;}
+  .venue-card-info p{font-size:12px; color:var(--paper-text); margin:0;}
+  .venue-card-info .rating{font-size:13px; margin-top:4px;}
+  .venue-badge{display:inline-block; font-size:11px; background:var(--yellow); color:#4A3400; padding:3px 8px; border-radius:100px; border:2px solid var(--ink); font-family:var(--font-display); font-weight:700; margin-right:8px;}
+  .venue-badge.mock{background:var(--pink); color:#fff;}
+  .placeholder-note{font-size:12px; color:var(--paper-text); font-style:italic; margin-top:14px; padding-left:14px; border-left:3px solid var(--pink);}
+
+  /* Étape 4 — carte d'invitation */
+  .invite-card{background:linear-gradient(135deg, #FF5A36 0%, #FF3D8A 100%); color:#fff; border:2px solid var(--ink); border-radius:16px; padding:32px 28px; text-align:center; box-shadow:6px 6px 0 var(--ink); margin-top:20px; position:relative; overflow:hidden;}
+  .invite-card::before{content:'🎉'; position:absolute; top:12px; left:16px; font-size:24px; opacity:.5;}
+  .invite-card::after{content:'🥂'; position:absolute; bottom:12px; right:16px; font-size:24px; opacity:.5;}
+  .invite-card .invite-eyebrow{font-family:var(--font-hand); font-size:22px; color:var(--yellow); margin-bottom:6px;}
+  .invite-card h3{font-family:var(--font-display); font-weight:800; font-size:26px; margin-bottom:14px; line-height:1.15;}
+  .invite-card .invite-details{font-size:15px; line-height:1.7; margin-bottom:16px;}
+  .invite-card .invite-details strong{font-weight:700;}
+  .invite-card .invite-cta{display:inline-block; background:#fff; color:var(--ink); font-family:var(--font-display); font-weight:700; font-size:13px; padding:8px 18px; border-radius:100px; border:2px solid var(--ink); margin-top:8px;}
+
+  /* Étape 4 — livre d'or */
+  .goldbook-share{background:var(--bg-paper); border:2px dashed var(--ink); border-radius:12px; padding:16px; margin-top:16px;}
+  .goldbook-share .share-url{font-family:monospace; font-size:12px; background:#fff; border:2px solid var(--ink); border-radius:8px; padding:8px 12px; word-break:break-all; margin-bottom:10px;}
+
+  .goldbook-entries{margin-top:20px; display:flex; flex-direction:column; gap:12px;}
+  .goldbook-entry{background:var(--bg-paper); border:2px solid var(--ink); border-radius:12px; padding:14px 16px;}
+  .goldbook-entry .entry-author{font-family:var(--font-display); font-weight:700; font-size:13px; margin-bottom:4px; color:var(--ink);}
+  .goldbook-entry .entry-relation{font-family:var(--font-hand); font-size:16px; color:var(--pink); margin-bottom:6px;}
+  .goldbook-entry .entry-text{font-size:14px; line-height:1.5; color:var(--paper-text);}
+
+  .reco-preview{background:var(--bg-paper); border:2px dashed var(--ink); border-radius:12px; padding:20px; font-size:14px; white-space:pre-wrap; line-height:1.7; margin-top:16px;}
+
+  /* Tunnel étape 4 */
+  .tunnel-step{display:flex; flex-direction:column; align-items:center; gap:4px; flex:1; padding:12px 8px; border-radius:12px; cursor:pointer; border:2px solid var(--ink); background:#fff; transition:background .15s ease;}
+  .tunnel-step.active{background:var(--ink); color:var(--light-text);}
+  .tunnel-step.done{background:var(--teal); color:#fff;}
+  .tunnel-num{font-family:var(--font-display); font-weight:800; font-size:18px; line-height:1;}
+  .tunnel-label{font-size:12px; font-weight:500;}
+  .tunnel-arrow{font-size:18px; color:var(--paper-text); padding:0 8px; flex-shrink:0;}
+  .tunnel-panel{max-width:960px; margin:0 auto; width:100%;}
+  .goldbook-entry{position:relative; padding-right:44px;}
+  .entry-delete{position:absolute; top:14px; right:14px; background:transparent; border:none; cursor:pointer; font-size:18px; color:var(--paper-text); transition:color .15s;}
+  .entry-delete:hover{color:var(--coral);}
+  #cal-dropdown button:hover{background:var(--bg-paper);}
+  --border: #e5e0d8;
+
+
+
+  /* Footer (shared) */
+  footer{background:var(--bg-dark); color:rgba(255,244,227,.6); padding:44px 24px; text-align:center; font-size:13px;}
+  footer .foot-logo{font-family:var(--font-display); font-weight:700; color:var(--light-text); font-size:17px; margin-bottom:6px;}
+  footer .foot-tagline{margin-bottom:18px;}
+  footer a{text-decoration:underline;}
+
+  @media (max-width:920px){
+    .cards-grid{grid-template-columns:repeat(2,1fr); max-width:600px;}
+  }
+  @media (max-width:760px){
+    .cards-grid{grid-template-columns:1fr; max-width:420px; gap:16px;}
+    .why-grid{grid-template-columns:1fr; text-align:center; max-width:340px;}
+    .header-inner{padding:14px 18px;}
+    .hero{padding:56px 20px 24px;}
+    .journey{padding:16px 20px 60px;}
+    .why{padding:56px 20px;}
+    .card:nth-child(1),.card:nth-child(2),.card:nth-child(3),.card:nth-child(4){transform:none;}
+    h1{font-size:34px;}
+  }
+  @media (max-width:700px){
+    .two-col{grid-template-columns:1fr;}
+  }
+  @media (max-width:560px){
+    .step-hero{padding:48px 20px 40px;}
+    main{padding:40px 18px 80px;}
+    .block{padding:22px 20px;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition:none !important; scroll-behavior:auto !important;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="logo" href="#" onclick="showView('home'); return false;">
+      <span class="logo-badge" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1F1147" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5"/><path d="M13.8 12H3"/></svg>
+      </span>
+      Mon petit pot de départ
+    </a>
+    <a class="cta-btn" id="nav-action" href="#parcours">Voir le parcours</a>
+  </div>
+</header>
+
+<div id="view-home" class="view">
+
+  <section class="hero">
+    <span class="confetti" style="top:18%; left:8%; --r:-12deg;" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#FFC93C"/></svg></span>
+    <span class="confetti" style="top:65%; left:12%; --r:20deg; animation-delay:.6s;" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#00B88A"/></svg></span>
+    <span class="confetti" style="top:28%; right:10%; --r:15deg; animation-delay:1.1s;" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#FF3D8A"/></svg></span>
+    <span class="confetti" style="top:72%; right:14%; --r:-18deg; animation-delay:.3s;" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#FF5A36"/></svg></span>
+    <span class="confetti" style="top:8%; left:42%; --r:8deg; animation-delay:.9s;" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#FFF4E3"/></svg></span>
+
+    <div class="hero-inner">
+      <p class="eyebrow">Pour ceux qui partent (bientôt)</p>
+      <h1>Bien partir, <span class="highlight">ça se prépare</span>.</h1>
+      <p>De la négociation au pot de départ, quatre étapes pour claquer la porte avec classe — et sans mauvaise surprise.</p>
+    </div>
+  </section>
+
+  <section class="journey" id="parcours">
+    <div class="cards-grid">
+
+      <a class="card" href="#" onclick="showView('etape-1'); return false;">
+        <p class="card-number">Étape 1</p>
+        <span class="card-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1F1147" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M5 7l-3 6a3 3 0 0 0 6 0z"/><path d="M19 7l-3 6a3 3 0 0 0 6 0z"/><path d="M5 7h14"/><path d="M8 21h8"/></svg>
+        </span>
+        <h3>Négocier son départ</h3>
+        <p>Rupture conventionnelle, indemnités : les bons réflexes pour ne rien lâcher.</p>
+        <span class="card-link">Explorer →</span>
+      </a>
+
+      <a class="card" href="#" onclick="showView('etape-2'); return false;">
+        <p class="card-number">Étape 2</p>
+        <span class="card-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1F1147" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+        </span>
+        <h3>Rédiger sa lettre</h3>
+        <p>Un générateur qui trouve le ton juste, du carré au fun.</p>
+        <span class="card-link">Explorer →</span>
+      </a>
+
+      <a class="card" href="#" onclick="showView('etape-3'); return false;">
+        <p class="card-number">Étape 3</p>
+        <span class="card-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1F1147" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11v2a1 1 0 0 0 1 1h3l5 4V6L7 10H4a1 1 0 0 0-1 1z"/><path d="M16 8a4 4 0 0 1 0 8"/><path d="M19 5a8 8 0 0 1 0 14"/></svg>
+        </span>
+        <h3>Annoncer son départ</h3>
+        <p>Le bon message, aux bonnes personnes, sans faux pas.</p>
+        <span class="card-link">Explorer →</span>
+      </a>
+
+      <a class="card" href="#" onclick="showView('etape-4'); return false;">
+        <p class="card-number">Étape 4</p>
+        <span class="card-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1F1147" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="11" rx="1"/><path d="M3 9l9-5 9 5"/><path d="M12 4v16"/></svg>
+        </span>
+        <h3>Organiser son pot de départ</h3>
+        <p>Cagnotte, carte, messages perso : de quoi partir en beauté.</p>
+        <span class="card-link">Explorer →</span>
+      </a>
+
+    </div>
+  </section>
+
+  <section class="why">
+    <div class="why-grid">
+      <div class="why-item">
+        <h3>Zéro blabla juridique</h3>
+        <p>Des conseils concrets, pas un cours de droit du travail.</p>
+      </div>
+      <div class="why-item">
+        <h3>Un ton qui te ressemble</h3>
+        <p>Pro, fun, ou entre les deux : à toi de choisir.</p>
+      </div>
+      <div class="why-item">
+        <h3>Tout au même endroit</h3>
+        <p>Plus besoin de jongler entre dix onglets différents.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div id="view-etape-1" class="view" style="display:none;">
+
+  <section class="step-hero">
+    <p class="eyebrow">Étape 1 sur 4</p>
+    <h1>Négocier son départ, <span class="highlight">sans trembler</span>.</h1>
+    <p>Ton syndiqué 2.0 est dans la place. Il connaît le Code du travail par cœur, il n'a jamais eu peur des RH, et il te donne les bonnes cartes — pas des cours du soir.</p>
+  </section>
+
+  <main>
+
+    <div class="block block-3">
+      <h2>Parle avec ton syndiqué 2.0</h2>
+      <p class="block-sub">Décris ta situation, il te dit comment jouer tes cartes. (Bientôt branché à une vraie IA — pour l'instant, il s'échauffe.)</p>
+
+      <div class="chat-thread" id="chat-thread">
+        <div class="chat-bubble bot">Salut. Raconte-moi ta situation en deux lignes, je te dis comment jouer la suite.</div>
+      </div>
+
+      <div class="chat-input-row">
+        <input type="text" id="chat-input" placeholder="Ex : Je veux partir mais mon manager va faire barrage..." onkeydown="if(event.key==='Enter'){sendMessage();}">
+        <button class="send-btn" onclick="sendMessage()">Envoyer</button>
+      </div>
+    </div>
+
+    <div class="two-col">
+
+      <div class="block block-1">
+        <h2>Le calcul, en 10 secondes</h2>
+        <p class="block-sub">Ton indemnité légale minimum, plus une fourchette réaliste de négociation.</p>
+
+        <div class="field">
+          <label for="anciennete">Ancienneté (en années)</label>
+          <input type="number" id="anciennete" min="0" step="0.5" placeholder="Ex : 4,5" oninput="updateCalc()">
+        </div>
+        <div class="field">
+          <label for="salaire">Salaire mensuel brut moyen (€)</label>
+          <input type="number" id="salaire" min="0" step="50" placeholder="Ex : 2800" oninput="updateCalc()">
+        </div>
+
+        <div class="calc-results">
+          <div class="calc-row">
+            <span class="label">Indemnité légale minimum</span>
+            <span class="value" id="legal-result">— €</span>
+          </div>
+          <div class="calc-row">
+            <span class="label">Fourchette de négociation réaliste</span>
+            <span class="value" id="range-result">— €</span>
+          </div>
+        </div>
+        <p class="calc-note">Estimation indicative basée sur le minimum légal (art. L1237-13). Ta convention collective peut prévoir mieux — vérifie ton IDCC sur ta fiche de paie.</p>
+      </div>
+
+      <div class="block block-2">
+        <h2>Conseil du jour</h2>
+        <p class="block-sub">Un nouveau piège à éviter, chaque jour.</p>
+        <span class="tip-badge" id="tip-number">Piège #1</span>
+        <p class="tip-text" id="tip-text">Chargement...</p>
+        <p class="tip-footer">Reviens demain, il y en aura un autre.</p>
+      </div>
+
+    </div>
+
+  </main>
+
+</div>
+
+<div id="view-etape-2" class="view" style="display:none;">
+
+  <section class="step-hero">
+    <p class="eyebrow">Étape 2 sur 4</p>
+    <h1>Rédiger sa lettre, <span class="highlight">sans y passer la soirée</span>.</h1>
+    <p>Remplis les champs, ta lettre s'écrit sous tes yeux. Le fond reste carré et conforme — le ton fun, on le garde pour le reste du site, pas pour le courrier à ton employeur.</p>
+  </section>
+
+  <main>
+
+    <div class="block block-1">
+      <h2>Le générateur</h2>
+      <p class="block-sub">Complète les champs à gauche, ta lettre se met à jour à droite.</p>
+
+      <div class="generator-grid">
+        <div>
+          <div class="field">
+            <label for="l-ton">Ta relation avec ton employeur</label>
+            <select id="l-ton" class="field-select" onchange="updateLetterPreview()">
+              <option value="reconnaissant">Reconnaissant·e — tu veux que ça se termine bien</option>
+              <option value="neutre" selected>Neutre — factuel, sans état d'âme</option>
+              <option value="distant">Distant·e — le minimum, dans les clous</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="l-nom">Ton nom complet</label>
+            <input type="text" id="l-nom" placeholder="Ex : Camille Dupont" oninput="updateLetterPreview()">
+          </div>
+          <div class="field">
+            <label for="l-poste">Ton poste</label>
+            <input type="text" id="l-poste" placeholder="Ex : Chef de projet" oninput="updateLetterPreview()">
+          </div>
+          <div class="field">
+            <label for="l-entreprise">Nom de l'entreprise (optionnel)</label>
+            <input type="text" id="l-entreprise" placeholder="Ex : Acme SAS" oninput="updateLetterPreview()">
+          </div>
+          <div class="field">
+            <label for="l-responsable">Nom du/de la responsable (optionnel)</label>
+            <input type="text" id="l-responsable" placeholder="Ex : Julien Martin" oninput="updateLetterPreview()">
+          </div>
+          <div class="field">
+            <label for="l-preavis">Durée de préavis</label>
+            <select id="l-preavis" class="field-select" onchange="updateLetterPreview()">
+              <option value="1" data-label="1 mois" selected>1 mois (employé / technicien)</option>
+              <option value="2" data-label="2 mois">2 mois</option>
+              <option value="3" data-label="3 mois">3 mois (cadre)</option>
+              <option value="0" data-label="0 mois">Dispense de préavis à négocier</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="l-date">Date de remise de la lettre</label>
+            <input type="date" id="l-date" oninput="updateLetterPreview()">
+          </div>
+          <div class="checkbox-field">
+            <input type="checkbox" id="l-aide" checked onchange="updateLetterPreview()">
+            <label for="l-aide">Proposer mon aide pour la transition</label>
+          </div>
+          <div class="checkbox-field">
+            <input type="checkbox" id="l-docs" checked onchange="updateLetterPreview()">
+            <label for="l-docs">Demander mes documents de fin de contrat</label>
+          </div>
+        </div>
+
+        <div>
+          <div class="letter-preview" id="letter-preview">Ta lettre apparaît ici au fur et à mesure.</div>
+          <div class="letter-actions">
+            <button class="send-btn" id="copy-btn" onclick="copyLetter()">Copier le texte</button>
+            <button class="btn-secondary" onclick="downloadLetter()">Télécharger (.txt)</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="block block-2">
+      <h2>Ce que dit la loi</h2>
+      <p class="block-sub">Les 4 points à connaître avant d'envoyer ta lettre.</p>
+      <ul class="law-list">
+        <li>Le préavis est en général d'1 mois pour les employés et techniciens, 3 mois pour les cadres — vérifie ta convention collective, elle peut prévoir autre chose.</li>
+        <li>À la fin du contrat, ton employeur doit obligatoirement te remettre 3 documents : le certificat de travail, le reçu pour solde de tout compte, et l'attestation France Travail.</li>
+        <li>Envoie ta lettre en recommandé avec accusé de réception, ou remets-la en main propre contre décharge : c'est cette date qui déclenche le début de ton préavis.</li>
+        <li>Une démission ne donne en général pas droit au chômage — sauf dans certains cas prévus par la loi (harcèlement, non-paiement du salaire, suivi de conjoint...). Vérifie ta situation auprès de France Travail en cas de doute.</li>
+      </ul>
+    </div>
+
+  </main>
+
+</div>
+
+<div id="view-etape-3" class="view" style="display:none;">
+
+  <section class="step-hero">
+    <p class="eyebrow">Étape 3 sur 4</p>
+    <h1>Annoncer son départ, <span class="highlight">à distance</span>.</h1>
+    <p>Tes collègues préférés ne sont pas dans le bureau d'à côté ? Trois outils pour leur annoncer la nouvelle avec un peu plus de style qu'un DM tout sec.</p>
+  </section>
+
+  <main>
+
+    <div class="block block-1">
+      <h2>Ta boîte à outils</h2>
+      <p class="block-sub">Choisis le format qui te fait plaisir. Chacun sort un truc prêt à coller dans Slack, Teams ou par mail.</p>
+
+      <div class="tool-tabs">
+        <button class="tool-tab active" onclick="switchTool('gif')">🎞️ GIF de sortie</button>
+        <button class="tool-tab" onclick="switchTool('countdown')">⏳ Compte à rebours</button>
+        <button class="tool-tab" onclick="switchTool('mail')">✉️ Mail du dernier jour</button>
+      </div>
+
+      <div id="tool-gif" class="tool-panel active">
+        <p style="font-size:14px; color:var(--paper-text); margin-bottom:12px;">Choisis ton GIF de départ. Un clic, tu récupères le lien à coller — Slack et Teams l'affichent en aperçu automatiquement.</p>
+        <div class="gif-grid" id="gif-grid"></div>
+        <div class="gif-preview-box" id="gif-preview-box">
+          <img id="gif-preview-img" src="" alt="Aperçu du GIF sélectionné">
+          <div class="gif-url" id="gif-url"></div>
+          <button class="send-btn" id="copy-gif-btn" onclick="copyGifUrl()">Copier le lien</button>
+        </div>
+      </div>
+
+      <div id="tool-countdown" class="tool-panel">
+        <p style="font-size:14px; color:var(--paper-text); margin-bottom:16px;">Génère une page avec le décompte en direct jusqu'à ton dernier jour, à partager par lien.</p>
+        <div class="field">
+          <label for="cd-date">Ton dernier jour</label>
+          <input type="date" id="cd-date">
+        </div>
+        <div class="field">
+          <label for="cd-message">Petit mot qui accompagne (optionnel)</label>
+          <input type="text" id="cd-message" placeholder="Ex : avant que je rende mon Mac">
+        </div>
+        <button class="send-btn" onclick="generateCountdownLink()">Générer mon lien</button>
+
+        <div class="countdown-share" id="countdown-share">
+          <p style="font-size:13px; margin-bottom:10px;">Voici ton lien à partager :</p>
+          <div class="share-url" id="countdown-url"></div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <button class="send-btn" id="copy-countdown-btn" onclick="copyCountdownUrl()">Copier le lien</button>
+            <button class="btn-secondary" onclick="previewCountdown()">Voir l'aperçu</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="tool-mail" class="tool-panel">
+        <p style="font-size:14px; color:var(--paper-text); margin-bottom:16px;">Le mail que tu envoies à toute l'équipe le jour J. Sobre, sincère, sans en faire trop. Coche ce que tu veux dire, la lettre s'assemble.</p>
+        <div class="field">
+          <label for="m-prenom">Ton prénom</label>
+          <input type="text" id="m-prenom" placeholder="Ex : Camille" oninput="updateMail3()">
+        </div>
+        <div class="field">
+          <label for="m-annees">Années passées dans la boîte</label>
+          <input type="number" id="m-annees" min="0" step="0.5" placeholder="Ex : 3" oninput="updateMail3()">
+        </div>
+        <div class="field">
+          <label for="m-date">Ton dernier jour</label>
+          <input type="date" id="m-date" oninput="updateMail3()">
+        </div>
+        <div class="field">
+          <label for="m-souvenir">Un souvenir marquant (optionnel)</label>
+          <input type="text" id="m-souvenir" placeholder="Ex : le lancement du projet Atlas" oninput="updateMail3()">
+        </div>
+        <div class="field">
+          <label for="m-contact">Comment rester en contact (optionnel)</label>
+          <input type="text" id="m-contact" placeholder="Ex : prenom@gmail.com ou LinkedIn" oninput="updateMail3()">
+        </div>
+        <div class="checkbox-field">
+          <input type="checkbox" id="m-remercier" checked onchange="updateMail3()">
+          <label for="m-remercier">Remercier l'équipe</label>
+        </div>
+        <div class="checkbox-field">
+          <input type="checkbox" id="m-suite" onchange="updateMail3()">
+          <label for="m-suite">Souhaiter bonne continuation</label>
+        </div>
+        <div class="mail-preview" id="mail3-preview">Ton mail apparaît ici.</div>
+        <div class="letter-actions">
+          <button class="send-btn" id="copy-mail3-btn" onclick="copyMail3()">Copier le texte</button>
+          <button class="btn-secondary" onclick="downloadMail3()">Télécharger (.txt)</button>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+</div>
+
+<div id="view-countdown-standalone" class="view" style="display:none;">
+  <div class="countdown-view">
+    <p class="eyebrow">Le compte à rebours</p>
+    <div class="big-number" id="cd-big-number">—</div>
+    <div class="big-label" id="cd-big-label">jours</div>
+    <h1 id="cd-big-title">avant mon départ</h1>
+    <p class="details" id="cd-big-details"></p>
+    <div class="cta-back">
+      <a class="cta-btn" href="#" onclick="showView('home'); return false;" style="background:var(--coral); border-color:var(--coral); color:var(--ink);">Faire le mien →</a>
+    </div>
+  </div>
+</div>
+
+<div id="view-etape-4" class="view" style="display:none;">
+
+  <section class="step-hero">
+    <p class="eyebrow">Étape 4 sur 4</p>
+    <h1>Organiser son pot, <span class="highlight">partir en beauté</span>.</h1>
+    <p>Lieu, invitation, livre d'or : trois étapes, tout est prêt pour ton dernier jour.</p>
+  </section>
+
+  <main>
+
+    <!-- Indicateur de progression -->
+    <div style="display:flex; align-items:center; gap:0; max-width:500px; margin:0 auto 8px;">
+      <div class="tunnel-step active" id="ts-1" onclick="goTunnelStep(1)">
+        <span class="tunnel-num">1</span>
+        <span class="tunnel-label">Le lieu</span>
+      </div>
+      <div class="tunnel-arrow">→</div>
+      <div class="tunnel-step" id="ts-2" onclick="goTunnelStep(2)">
+        <span class="tunnel-num">2</span>
+        <span class="tunnel-label">L'invitation</span>
+      </div>
+    </div>
+
+    <!-- Étape 4.1 — Le lieu -->
+    <div class="block block-1 tunnel-panel" id="tp-1">
+      <h2>Trouver le lieu 📍</h2>
+      <p class="block-sub">Entre ta ville, on ouvre Privateaser avec les bars privatisables filtrés pour un pot de départ — tu choisis et tu réserves directement.</p>
+
+      <div class="field">
+        <label for="v-ville">Ta ville ou ton quartier</label>
+        <div class="venue-search-row">
+          <input type="text" id="v-ville" placeholder="Ex : Paris 11e, Lyon Confluence…">
+          <button class="send-btn" onclick="openPrivateaser()">Chercher 🔍</button>
+        </div>
+      </div>
+
+      <div id="venue-searching" style="display:none; font-size:13px; color:var(--paper-text); margin-top:12px;">Géolocalisation en cours…</div>
+
+      <div class="field" style="margin-top:20px;">
+        <label for="v-lieu-choisi">Tu as trouvé ton lieu ? Note-le ici</label>
+        <input type="text" id="v-lieu-choisi" placeholder="Ex : Le Perchoir, Paris 11e" oninput="syncLieuToInvite()">
+      </div>
+
+      <div style="margin-top:20px;">
+        <button class="send-btn" onclick="goTunnelStep(2)">Suivant — L'invitation →</button>
+      </div>
+    </div>
+
+    <!-- Étape 4.2 — L'invitation -->
+    <div class="block block-2 tunnel-panel" id="tp-2" style="display:none;">
+      <h2>L'invitation 🎉</h2>
+      <p class="block-sub">Remplis les infos, la carte se génère en direct.</p>
+
+      <div class="generator-grid">
+        <div>
+          <div class="field">
+            <label for="i-prenom">Ton prénom</label>
+            <input type="text" id="i-prenom" placeholder="Ex : Camille" oninput="updateInvite()">
+          </div>
+          <div class="field">
+            <label for="i-lieu">Lieu du pot</label>
+            <input type="text" id="i-lieu" placeholder="Récupéré depuis l'étape 1" oninput="updateInvite()">
+          </div>
+          <div class="field">
+            <label for="i-date">Date</label>
+            <input type="date" id="i-date" oninput="updateInvite()">
+          </div>
+          <div class="field">
+            <label for="i-heure">Heure</label>
+            <input type="time" id="i-heure" value="18:30" oninput="updateInvite()">
+          </div>
+          <div class="field">
+            <label for="i-mot">Un petit mot (optionnel)</label>
+            <input type="text" id="i-mot" placeholder="Ex : venez comme vous êtes !" oninput="updateInvite()">
+          </div>
+          <div class="letter-actions">
+            <button class="send-btn" id="copy-invite-btn" onclick="copyInviteText()">Copier le texte</button>
+          </div>
+        </div>
+
+        <div>
+          <div class="invite-card" id="invite-card">
+            <p class="invite-eyebrow">Pot de départ !</p>
+            <h3 id="invite-title">[Ton prénom] vous invite</h3>
+            <p class="invite-details" id="invite-details"><strong>[date]</strong> à <strong>[heure]</strong><br><strong>[lieu]</strong></p>
+            <span class="invite-cta">✨ Passe faire coucou</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div style="margin-top:28px; padding-top:22px; border-top:2px dashed var(--ink); display:flex; flex-direction:column; gap:14px;">
+
+        <!-- Bouton Créer un événement avec dropdown -->
+        <div style="position:relative;">
+          <button class="send-btn" onclick="toggleCalDropdown()" id="cal-btn" style="width:100%; justify-content:center; display:flex; align-items:center; gap:8px;">
+            📅 Créer un événement <span id="cal-arrow">▾</span>
+          </button>
+          <div id="cal-dropdown" style="display:none; position:absolute; top:calc(100% + 8px); left:0; right:0; background:#fff; border:2px solid var(--ink); border-radius:12px; box-shadow:4px 4px 0 var(--ink); z-index:10; overflow:hidden;">
+            <button onclick="openCalendar('google')" style="width:100%; text-align:left; padding:12px 16px; font-family:var(--font-body); font-size:14px; background:transparent; border:none; border-bottom:1px solid var(--border); cursor:pointer; display:flex; align-items:center; gap:10px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" stroke="#1F1147" stroke-width="2"/><path d="M16 2v4M8 2v4M3 10h18" stroke="#1F1147" stroke-width="2"/></svg>
+              Google Calendar
+            </button>
+            <button onclick="openCalendar('apple')" style="width:100%; text-align:left; padding:12px 16px; font-family:var(--font-body); font-size:14px; background:transparent; border:none; border-bottom:1px solid var(--border); cursor:pointer; display:flex; align-items:center; gap:10px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M17 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z" stroke="#1F1147" stroke-width="2"/></svg>
+              Apple Calendar (.ics)
+            </button>
+            <button onclick="openCalendar('outlook')" style="width:100%; text-align:left; padding:12px 16px; font-family:var(--font-body); font-size:14px; background:transparent; border:none; cursor:pointer; display:flex; align-items:center; gap:10px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" stroke="#1F1147" stroke-width="2"/><path d="M2 8l10 6 10-6" stroke="#1F1147" stroke-width="2"/></svg>
+              Outlook (.ics)
+            </button>
+          </div>
+        </div>
+
+        <!-- Bouton WhatsApp -->
+        <button class="btn-secondary" onclick="sendWhatsapp()" style="width:100%; justify-content:center; display:flex; align-items:center; gap:8px; background:#25D366; color:#fff; border-color:#25D366;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+          Envoyer le save the date sur WhatsApp
+        </button>
+
+      </div>
+
+      <div style="margin-top:20px;">
+        <button class="btn-secondary" onclick="goTunnelStep(1)">← Retour</button>
+      </div>
+    </div>
+
+  </main>
+
+</div>
+
+<footer>
+  <p class="foot-logo">Mon petit pot de départ</p>
+  <p class="foot-tagline">Le kit complet pour bien partir.</p>
+  <p>© 2026 · <a href="mailto:contact@monpetitpotdedepart.fr">contact@monpetitpotdedepart.fr</a></p>
+</footer>
+
+<script>
+  let currentView = 'home';
+
+  function showView(id){
+    document.querySelectorAll('.view').forEach(function(v){ v.style.display = 'none'; });
+    document.getElementById('view-' + id).style.display = 'block';
+    currentView = id;
+    window.scrollTo(0, 0);
+    updateNav();
+    if(id === 'etape-1'){ setTipOfDay(); }
+    if(id === 'etape-2'){ updateLetterPreview(); }
+    if(id === 'etape-3'){ renderGifGrid(); updateMail3(); }
+    if(id === 'etape-4'){ initEtape4(); }
+  }
+
+  function updateNav(){
+    const nav = document.getElementById('nav-action');
+    if(currentView === 'home'){
+      nav.textContent = 'Voir le parcours';
+      nav.setAttribute('href', '#parcours');
+      nav.onclick = null;
+    } else {
+      nav.textContent = '← Accueil';
+      nav.setAttribute('href', '#');
+      nav.onclick = function(e){ e.preventDefault(); showView('home'); };
+    }
+  }
+
+  function formatEuro(n){
+    return Math.round(n).toLocaleString('fr-FR') + ' €';
+  }
+
+  function updateCalc(){
+    const years = parseFloat(document.getElementById('anciennete').value) || 0;
+    const salary = parseFloat(document.getElementById('salaire').value) || 0;
+    let legal;
+    if(years <= 10){
+      legal = (salary / 4) * years;
+    } else {
+      legal = (salary / 4) * 10 + (salary / 3) * (years - 10);
+    }
+    const low = legal + salary * 1;
+    const high = legal + salary * 3;
+    document.getElementById('legal-result').textContent = (salary > 0 && years > 0) ? formatEuro(legal) : '— €';
+    document.getElementById('range-result').textContent = (salary > 0 && years > 0) ? (formatEuro(low) + ' – ' + formatEuro(high)) : '— €';
+  }
+
+  const tips = [
+    "Ne balance jamais ton chiffre en premier. Celui qui donne un montant en premier perd la moitié de sa marge de négo.",
+    "Évite la machine à café pour annoncer la nouvelle. Demande un vrai rendez-vous, à un moment calme — pas un vendredi 17h58.",
+    "Ne signe rien le jour même. Tu as 15 jours de rétractation, utilise-les si un doute te chatouille.",
+    "Garde une trace écrite de chaque échange important. Un mail de récap après l'entretien, ça ne mange pas de pain.",
+    "Vérifie ta convention collective avant de négocier. L'indemnité légale n'est qu'un plancher, pas un plafond.",
+    "Ne dis jamais que tu as déjà un autre poste en poche. Ça retire toute urgence à ton employeur de te retenir.",
+    "Un poste dur à remplacer, c'est ton meilleur argument. Ressors-le sans complexe.",
+    "Ne négocie jamais sous le coup de la colère. Prends 24h avant de répondre à une proposition, même nulle.",
+    "Un prud'hommes coûte cher et traîne en longueur. Rappelle à ton employeur que la rupture conventionnelle, c'est la sortie tranquille pour tout le monde.",
+    "Ne laisse jamais un entretien se terminer sans date du prochain point. \"On verra\" n'est pas une réponse.",
+    "N'improvise pas tes arguments sur place. Écris-les avant, même en 3 lignes sur ton téléphone.",
+    "Ne compare jamais ton cas à celui d'un collègue devant ton employeur. Chaque dossier se négocie seul.",
+    "Reste factuel, jamais dans l'émotion brute. Les faits pèsent plus lourd que les ressentis dans une négociation.",
+    "N'accepte pas la première proposition par lassitude. Un silence de quelques secondes fait souvent remonter l'offre.",
+    "Prépare ta date de sortie idéale avant l'entretien. Celui qui propose une date en premier oriente la discussion.",
+    "Ne mélange jamais rupture conventionnelle et récriminations sur le passé. Reste tourné vers la sortie, pas vers le passif."
+  ];
+
+  function setTipOfDay(){
+    const start = new Date(new Date().getFullYear(), 0, 0);
+    const diff = Date.now() - start;
+    const dayOfYear = Math.floor(diff / 86400000);
+    const index = dayOfYear % tips.length;
+    document.getElementById('tip-text').textContent = tips[index];
+    document.getElementById('tip-number').textContent = 'Piège #' + (index + 1);
+  }
+
+  function sendMessage(){
+    const input = document.getElementById('chat-input');
+    const text = input.value.trim();
+    if(!text) return;
+    const thread = document.getElementById('chat-thread');
+
+    const userBubble = document.createElement('div');
+    userBubble.className = 'chat-bubble user';
+    userBubble.textContent = text;
+    thread.appendChild(userBubble);
+    input.value = '';
+    thread.scrollTop = thread.scrollHeight;
+
+    setTimeout(function(){
+      const botBubble = document.createElement('div');
+      botBubble.className = 'chat-bubble bot';
+      botBubble.textContent = "Je finis de m'installer, reviens très vite. En attendant, va jeter un œil au conseil du jour, juste au-dessus.";
+      thread.appendChild(botBubble);
+      thread.scrollTop = thread.scrollHeight;
+    }, 500);
+  }
+
+  function formatDateFr(d){
+    return d.toLocaleDateString('fr-FR', { day:'numeric', month:'long', year:'numeric' });
+  }
+
+  function updateLetterPreview(){
+    const ton = document.getElementById('l-ton').value;
+    const nom = document.getElementById('l-nom').value.trim() || '[Ton prénom et nom]';
+    const poste = document.getElementById('l-poste').value.trim() || '[ton poste]';
+    const entreprise = document.getElementById('l-entreprise').value.trim() || 'votre entreprise';
+    const responsable = document.getElementById('l-responsable').value.trim();
+    const preavisSelect = document.getElementById('l-preavis');
+    const preavisMois = parseInt(preavisSelect.value, 10);
+    const preavisLabel = preavisSelect.selectedOptions[0].getAttribute('data-label');
+    const dateStr = document.getElementById('l-date').value;
+    const aide = document.getElementById('l-aide').checked;
+    const docs = document.getElementById('l-docs').checked;
+
+    const dateRemise = dateStr ? new Date(dateStr + 'T00:00:00') : new Date();
+    const dateFin = new Date(dateRemise);
+    dateFin.setMonth(dateFin.getMonth() + preavisMois);
+
+    const salutation = responsable ? ('Madame, Monsieur ' + responsable) : 'Madame, Monsieur';
+
+    const remerciement = {
+      reconnaissant: "Je tiens à vous remercier pour la confiance et les opportunités que vous m'avez accordées durant cette collaboration.\n\n",
+      neutre: '',
+      distant: ''
+    };
+
+    const phraseAide = {
+      reconnaissant: "Je reste pleinement disponible pour faciliter au mieux la transition et accompagner la passation de mes dossiers dans les meilleures conditions.\n\n",
+      neutre: "Je reste disponible pour faciliter la transition et assurer la passation de mes dossiers dans les meilleures conditions.\n\n",
+      distant: "Je resterai disponible durant la durée de mon préavis pour les tâches nécessaires à la bonne transmission de mes dossiers.\n\n"
+    };
+
+    let letter = '';
+    letter += 'Le ' + formatDateFr(dateRemise) + '\n\n';
+    letter += 'Objet : Lettre de démission\n\n';
+    letter += salutation + ',\n\n';
+    letter += "Par la présente, je vous informe de ma décision de démissionner de mon poste de " + poste + ", que j'occupe au sein de " + entreprise + ".\n\n";
+    letter += remerciement[ton];
+    if(preavisMois > 0){
+      letter += "Conformément aux dispositions de mon contrat de travail, je respecterai un préavis de " + preavisLabel + ", qui débutera à réception de ce courrier. Mon dernier jour de travail sera donc le " + formatDateFr(dateFin) + ".\n\n";
+    } else {
+      letter += "Je vous serais reconnaissant·e d'étudier la possibilité d'une dispense de préavis, à convenir ensemble.\n\n";
+    }
+    if(aide){
+      letter += phraseAide[ton];
+    }
+    if(docs){
+      letter += "Je vous remercie de bien vouloir me remettre, à l'issue de mon contrat, mon certificat de travail, mon reçu pour solde de tout compte, ainsi que mon attestation France Travail.\n\n";
+    }
+    letter += "Je vous prie d'agréer, " + salutation + ", l'expression de mes salutations distinguées.\n\n";
+    letter += nom;
+
+    document.getElementById('letter-preview').textContent = letter;
+  }
+
+  function updateMessage3(){
+    // fonction remplacée par les 3 nouveaux outils ci-dessous
+  }
+
+  // ========== Étape 3 — outils niveau 1 ==========
+
+  function switchTool(tool){
+    document.querySelectorAll('.tool-tab').forEach(function(t){ t.classList.remove('active'); });
+    document.querySelectorAll('.tool-panel').forEach(function(p){ p.classList.remove('active'); });
+    event.target.classList.add('active');
+    document.getElementById('tool-' + tool).classList.add('active');
+  }
+
+  // ---- Générateur de GIF ----
+  const gifLibrary = [
+    { id:'peace', label:'Peace out', url:'https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif' },
+    { id:'bye', label:'Bye bye', url:'https://media.giphy.com/media/3ornk57KwDXf81rjWM/giphy.gif' },
+    { id:'wave', label:'Coucou', url:'https://media.giphy.com/media/l4KibK3JwaVo0CjHi/giphy.gif' },
+    { id:'mic', label:'Mic drop', url:'https://media.giphy.com/media/3o7527Rn1HxXWqgxuo/giphy.gif' },
+    { id:'walk', label:'Je m\'en vais', url:'https://media.giphy.com/media/xUOxfjsW9fWPqEWouI/giphy.gif' },
+    { id:'sunset', label:'Vers l\'horizon', url:'https://media.giphy.com/media/3o6MbudEFEsWmuk0X6/giphy.gif' },
+    { id:'confetti', label:'Confettis', url:'https://media.giphy.com/media/artj92V8o75VPL7AeQ/giphy.gif' },
+    { id:'clap', label:'Applaudissements', url:'https://media.giphy.com/media/26xBI73gWquCBBCDe/giphy.gif' },
+    { id:'dance', label:'Danse de la victoire', url:'https://media.giphy.com/media/l2QDM9Jnim1YVILXa/giphy.gif' },
+    { id:'salute', label:'Salut militaire', url:'https://media.giphy.com/media/26vUOSRWJyoAgMfJC/giphy.gif' },
+    { id:'kiss', label:'Bisou envolé', url:'https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif' },
+    { id:'boss', label:'Je quitte le boss', url:'https://media.giphy.com/media/l0MYryZTmQgvHI5TG/giphy.gif' }
+  ];
+  let selectedGifUrl = '';
+
+  function renderGifGrid(){
+    const grid = document.getElementById('gif-grid');
+    if(!grid) return;
+    grid.innerHTML = '';
+    gifLibrary.forEach(function(gif){
+      const item = document.createElement('div');
+      item.className = 'gif-item';
+      item.setAttribute('title', gif.label);
+      item.innerHTML = '<img src="' + gif.url + '" alt="' + gif.label + '" loading="lazy">';
+      item.onclick = function(){ selectGif(gif); };
+      grid.appendChild(item);
+    });
+  }
+
+  function selectGif(gif){
+    selectedGifUrl = gif.url;
+    document.getElementById('gif-preview-img').src = gif.url;
+    document.getElementById('gif-url').textContent = gif.url;
+    document.getElementById('gif-preview-box').classList.add('visible');
+  }
+
+  function copyGifUrl(){
+    if(!selectedGifUrl) return;
+    navigator.clipboard.writeText(selectedGifUrl).then(function(){
+      const btn = document.getElementById('copy-gif-btn');
+      const original = btn.textContent;
+      btn.textContent = 'Copié !';
+      setTimeout(function(){ btn.textContent = original; }, 1500);
+    });
+  }
+
+  // ---- Compte à rebours ----
+  function generateCountdownLink(){
+    const date = document.getElementById('cd-date').value;
+    const msg = document.getElementById('cd-message').value.trim();
+    if(!date){
+      alert('Choisis d\'abord ta date de départ.');
+      return;
+    }
+    const base = window.location.origin + window.location.pathname;
+    const params = new URLSearchParams();
+    params.set('countdown', date);
+    if(msg) params.set('msg', msg);
+    const link = base + '#countdown?' + params.toString();
+    document.getElementById('countdown-url').textContent = link;
+    document.getElementById('countdown-share').classList.add('visible');
+  }
+
+  function copyCountdownUrl(){
+    const text = document.getElementById('countdown-url').textContent;
+    navigator.clipboard.writeText(text).then(function(){
+      const btn = document.getElementById('copy-countdown-btn');
+      const original = btn.textContent;
+      btn.textContent = 'Copié !';
+      setTimeout(function(){ btn.textContent = original; }, 1500);
+    });
+  }
+
+  function previewCountdown(){
+    const date = document.getElementById('cd-date').value;
+    const msg = document.getElementById('cd-message').value.trim();
+    if(!date) return;
+    launchCountdownView(date, msg);
+  }
+
+  let countdownInterval = null;
+
+  function launchCountdownView(dateStr, msg){
+    showView('countdown-standalone');
+    const target = new Date(dateStr + 'T00:00:00');
+    const title = 'avant mon départ';
+    document.getElementById('cd-big-title').textContent = msg ? (msg) : title;
+    updateCountdownDisplay(target);
+    if(countdownInterval) clearInterval(countdownInterval);
+    countdownInterval = setInterval(function(){ updateCountdownDisplay(target); }, 1000);
+  }
+
+  function updateCountdownDisplay(target){
+    const now = new Date();
+    const diff = target.getTime() - now.getTime();
+    if(diff <= 0){
+      document.getElementById('cd-big-number').textContent = '0';
+      document.getElementById('cd-big-label').textContent = 'C\'est fini !';
+      document.getElementById('cd-big-details').textContent = 'Bon vent 👋';
+      if(countdownInterval) clearInterval(countdownInterval);
+      return;
+    }
+    const days = Math.floor(diff / (1000*60*60*24));
+    const hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+    const minutes = Math.floor((diff % (1000*60*60)) / (1000*60));
+    document.getElementById('cd-big-number').textContent = days;
+    document.getElementById('cd-big-label').textContent = days > 1 ? 'jours' : 'jour';
+    document.getElementById('cd-big-details').textContent = '(' + hours + 'h ' + minutes + 'min)';
+  }
+
+  function checkCountdownRoute(){
+    const hash = window.location.hash;
+    if(hash.indexOf('#countdown?') === 0){
+      const params = new URLSearchParams(hash.substring(hash.indexOf('?') + 1));
+      const date = params.get('countdown');
+      const msg = params.get('msg');
+      if(date){
+        launchCountdownView(date, msg || '');
+        return true;
+      }
+    }
+    return false;
+  }
+
+  // ---- Mail second degré ----
+  function updateMail3(){
+    const prenom = document.getElementById('m-prenom').value.trim() || '[ton prénom]';
+    const anneesRaw = document.getElementById('m-annees').value;
+    const annees = anneesRaw ? parseFloat(anneesRaw) : null;
+    const dateStr = document.getElementById('m-date').value;
+    const souvenir = document.getElementById('m-souvenir').value.trim();
+    const contact = document.getElementById('m-contact').value.trim();
+    const remercier = document.getElementById('m-remercier').checked;
+    const suite = document.getElementById('m-suite').checked;
+    const dateFormatee = dateStr ? formatDateFr(new Date(dateStr + 'T00:00:00')) : '[date de mon dernier jour]';
+
+    let mail = '';
+    mail += 'Objet : Merci et à bientôt\n\n';
+    mail += 'Bonjour à toutes et à tous,\n\n';
+
+    if(annees !== null && annees > 0){
+      const anneesLabel = annees < 2 ? (annees + ' année') : (annees + ' années');
+      mail += "Aujourd'hui, " + dateFormatee + ", c'est mon dernier jour ici après " + anneesLabel + " passées à vos côtés.\n\n";
+    } else {
+      mail += "Aujourd'hui, " + dateFormatee + ", c'est mon dernier jour parmi vous.\n\n";
+    }
+
+    if(remercier){
+      mail += "Je voulais prendre un instant pour vous remercier. Pour la confiance, pour l'exigence, pour les projets menés ensemble, et pour tout ce que j'ai appris à votre contact.\n\n";
+    }
+
+    if(souvenir){
+      mail += "S'il ne fallait retenir qu'un moment, ce serait " + souvenir + ". Merci d'en avoir fait partie.\n\n";
+    }
+
+    if(suite){
+      mail += "Je vous souhaite à toutes et à tous une belle continuation, et beaucoup de réussite dans ce qui vous attend.\n\n";
+    }
+
+    if(contact){
+      mail += "Si vous souhaitez rester en contact, vous me trouverez ici : " + contact + ". La porte reste ouverte.\n\n";
+    }
+
+    mail += "Bien à vous,\n" + prenom;
+
+    document.getElementById('mail3-preview').textContent = mail;
+  }
+
+  function copyMail3(){
+    const text = document.getElementById('mail3-preview').textContent;
+    navigator.clipboard.writeText(text).then(function(){
+      const btn = document.getElementById('copy-mail3-btn');
+      const original = btn.textContent;
+      btn.textContent = 'Copié !';
+      setTimeout(function(){ btn.textContent = original; }, 1500);
+    });
+  }
+
+  function downloadMail3(){
+    const text = document.getElementById('mail3-preview').textContent;
+    const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'mail-de-depart.txt';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
+  // ========== Étape 4 — tunnel 3 étapes ==========
+
+  let goldbookEntries = [
+    { id:1, author:'Léa', relation:'Ta binôme de projet', text:'Rigueur et calme olympien même quand tout part en vrille. Tu as ce truc rare de rendre les réunions à 17h supportables.' },
+    { id:2, author:'Marc', relation:'Ton manager', text:'Une capacité d\'analyse au-dessus du lot, et une exigence bienveillante qui a tiré toute l\'équipe vers le haut. Tu vas nous manquer.' },
+    { id:3, author:'Sofia', relation:'Ta stagiaire l\'an dernier', text:'Merci d\'avoir pris le temps de m\'expliquer, de me faire confiance et de me laisser me tromper. J\'ai appris plus en 6 mois qu\'en 3 ans d\'école.' },
+    { id:4, author:'Alex', relation:'Ton voisin de bureau', text:'Le seul à comprendre mes blagues sur Excel. Merci pour les cafés, les débats absurdes, et les fois où tu m\'as sauvé la mise en réunion.' }
+  ];
+  let goldbookId = 'gb-' + Math.random().toString(36).substr(2,8);
+  let currentTunnelStep = 1;
+
+  function initEtape4(){
+    updateInvite();
+    updateGoldbookLink();
+    renderGoldbook();
+    goTunnelStep(1);
+  }
+
+  function goTunnelStep(n){
+    currentTunnelStep = n;
+    [1,2].forEach(function(i){
+      const tp = document.getElementById('tp-' + i);
+      if(tp) tp.style.display = (i === n) ? 'block' : 'none';
+      const ts = document.getElementById('ts-' + i);
+      if(ts){
+        ts.classList.remove('active','done');
+        if(i < n) ts.classList.add('done');
+        if(i === n) ts.classList.add('active');
+      }
+    });
+    window.scrollTo(0,0);
+  }
+
+  // ---- Dropdown calendrier ----
+  function toggleCalDropdown(){
+    const dd = document.getElementById('cal-dropdown');
+    const arrow = document.getElementById('cal-arrow');
+    const isOpen = dd.style.display === 'block';
+    dd.style.display = isOpen ? 'none' : 'block';
+    arrow.textContent = isOpen ? '▾' : '▴';
+    if(!isOpen){
+      document.addEventListener('click', closeCalOnClickOutside);
+    }
+  }
+
+  function closeCalOnClickOutside(e){
+    const dd = document.getElementById('cal-dropdown');
+    const btn = document.getElementById('cal-btn');
+    if(dd && !dd.contains(e.target) && e.target !== btn){
+      dd.style.display = 'none';
+      document.getElementById('cal-arrow').textContent = '▾';
+      document.removeEventListener('click', closeCalOnClickOutside);
+    }
+  }
+
+  function getCalInfos(){
+    const prenom = document.getElementById('i-prenom').value.trim() || 'Pot de départ';
+    const lieu = document.getElementById('i-lieu').value.trim() || '';
+    const dateStr = document.getElementById('i-date').value;
+    const heure = document.getElementById('i-heure').value || '18:30';
+    const mot = document.getElementById('i-mot').value.trim();
+    return { prenom, lieu, dateStr, heure, mot };
+  }
+
+  function openCalendar(type){
+    document.getElementById('cal-dropdown').style.display = 'none';
+    document.getElementById('cal-arrow').textContent = '▾';
+
+    const { prenom, lieu, dateStr, heure, mot } = getCalInfos();
+    if(!dateStr){ alert('Remplis d\'abord la date du pot.'); return; }
+
+    const title = encodeURIComponent('Pot de départ de ' + prenom);
+    const details = encodeURIComponent((mot ? mot + '\n\n' : '') + (lieu ? 'Lieu : ' + lieu : ''));
+    const location = encodeURIComponent(lieu);
+
+    // Construire la date au format YYYYMMDDTHHMMSS
+    const [year, month, day] = dateStr.split('-');
+    const [hh, mm] = heure.split(':');
+    const dtStart = year + month + day + 'T' + hh + mm + '00';
+    // Fin = début + 2h
+    const endHour = String(parseInt(hh) + 2).padStart(2, '0');
+    const dtEnd = year + month + day + 'T' + endHour + mm + '00';
+
+    if(type === 'google'){
+      const url = 'https://calendar.google.com/calendar/render?action=TEMPLATE'
+        + '&text=' + title
+        + '&dates=' + dtStart + '/' + dtEnd
+        + '&details=' + details
+        + '&location=' + location;
+      window.open(url, '_blank');
+    } else {
+      // Apple + Outlook → fichier .ics
+      const ics = [
+        'BEGIN:VCALENDAR',
+        'VERSION:2.0',
+        'PRODID:-//Mon petit pot de départ//FR',
+        'BEGIN:VEVENT',
+        'DTSTART:' + dtStart,
+        'DTEND:' + dtEnd,
+        'SUMMARY:Pot de départ de ' + prenom,
+        'LOCATION:' + lieu,
+        'DESCRIPTION:' + (mot || ''),
+        'END:VEVENT',
+        'END:VCALENDAR'
+      ].join('\r\n');
+
+      const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'pot-de-depart.ics';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+  }
+
+  // ---- WhatsApp save the date ----
+  function sendWhatsapp(){
+    const { prenom, lieu, dateStr, heure, mot } = getCalInfos();
+    const dateFormatee = dateStr ? formatDateFr(new Date(dateStr + 'T00:00:00')) : '[date]';
+    const siteUrl = window.location.origin + window.location.pathname;
+
+    let msg = '🎉 *Pot de départ de ' + prenom + '!*\n\n';
+    msg += '📅 ' + dateFormatee + ' à ' + heure + '\n';
+    if(lieu) msg += '📍 ' + lieu + '\n';
+    if(mot) msg += '\n_« ' + mot + ' »_\n';
+    msg += '\nPasse faire coucou ! 👋\n\n';
+    msg += siteUrl;
+
+    const url = 'https://wa.me/?text=' + encodeURIComponent(msg);
+    window.open(url, '_blank');
+  }
+
+  // ---- Deep link Privateaser ----
+  function openPrivateaser(){
+    const ville = document.getElementById('v-ville').value.trim();
+    if(!ville){
+      alert('Entre d\'abord ta ville ou ton quartier.');
+      return;
+    }
+    document.getElementById('venue-searching').style.display = 'block';
+    fetch('https://nominatim.openstreetmap.org/search?q=' + encodeURIComponent(ville + ', France') + '&format=json&limit=1')
+      .then(function(r){ return r.json(); })
+      .then(function(data){
+        document.getElementById('venue-searching').style.display = 'none';
+        if(data && data.length > 0){
+          const lat = data[0].lat;
+          const lon = data[0].lon;
+          const url = 'https://www.privateaser.com/search?latitude-centre=' + lat + '&longitude-centre=' + lon + '&rayon=2000&universe=bar&occasion=afterwork_pro';
+          window.open(url, '_blank');
+        } else {
+          alert('Ville introuvable. Essaie "Paris", "Lyon 2e", ou un nom de quartier plus simple.');
+        }
+      })
+      .catch(function(){
+        document.getElementById('venue-searching').style.display = 'none';
+        // Fallback : Privateaser Paris par défaut
+        window.open('https://www.privateaser.com/search?latitude-centre=48.8566&longitude-centre=2.3522&rayon=2000&universe=bar&occasion=afterwork_pro', '_blank');
+      });
+  }
+
+  function syncLieuToInvite(){
+    const lieu = document.getElementById('v-lieu-choisi').value;
+    document.getElementById('i-lieu').value = lieu;
+    updateInvite();
+  }
+
+  // ---- Invitation ----
+  function updateGoldbookLink(){
+    const base = window.location.href.split('#')[0];
+    const link = base + '#goldbook?' + goldbookId;
+    document.getElementById('goldbook-url').textContent = link;
+    const el = document.getElementById('invite-goldbook-link');
+    if(el) el.textContent = link;
+  }
+
+  function updateInvite(){
+    const prenom = document.getElementById('i-prenom').value.trim() || '[Ton prénom]';
+    const lieu = document.getElementById('i-lieu').value.trim() || '[Lieu à venir]';
+    const dateStr = document.getElementById('i-date').value;
+    const heure = document.getElementById('i-heure') ? document.getElementById('i-heure').value || '18:30' : '18:30';
+    const mot = document.getElementById('i-mot') ? document.getElementById('i-mot').value.trim() : '';
+    const dateFormatee = dateStr ? formatDateFr(new Date(dateStr + 'T00:00:00')) : '[date]';
+    document.getElementById('invite-title').textContent = prenom + ' vous invite';
+    let details = '<strong>' + dateFormatee + '</strong> à <strong>' + heure + '</strong><br><strong>' + lieu + '</strong>';
+    if(mot){ details += '<br><br><em style="font-family:var(--font-hand); font-size:20px;">« ' + mot + ' »</em>'; }
+    document.getElementById('invite-details').innerHTML = details;
+    updateGoldbookLink();
+  }
+
+  function copyInviteText(){
+    const prenom = document.getElementById('i-prenom').value.trim() || '[ton prénom]';
+    const lieu = document.getElementById('i-lieu').value.trim() || '[lieu]';
+    const dateStr = document.getElementById('i-date').value;
+    const heure = document.getElementById('i-heure').value || '18:30';
+    const mot = document.getElementById('i-mot').value.trim();
+    const dateFormatee = dateStr ? formatDateFr(new Date(dateStr + 'T00:00:00')) : '[date]';
+    const goldbookLink = document.getElementById('goldbook-url').textContent;
+    let text = '🎉 Pot de départ de ' + prenom + '\n\n';
+    text += 'Le ' + dateFormatee + ' à ' + heure + '\n';
+    text += lieu + '\n';
+    if(mot){ text += '\n« ' + mot + ' »\n'; }
+    text += '\n✍️ Laisse-moi un mot dans le livre d\'or : ' + goldbookLink;
+    text += '\n\nPasse faire coucou !';
+    navigator.clipboard.writeText(text).then(function(){
+      const btn = document.getElementById('copy-invite-btn');
+      const orig = btn.textContent;
+      btn.textContent = 'Copié !';
+      setTimeout(function(){ btn.textContent = orig; }, 1500);
+    });
+  }
+
+  // ---- Livre d'or ----
+  function renderGoldbook(){
+    const container = document.getElementById('goldbook-entries');
+    if(!container) return;
+    container.innerHTML = '';
+    if(goldbookEntries.length === 0){
+      container.innerHTML = '<p style="font-size:14px; color:var(--paper-text); padding:16px 0;">Aucun mot pour l\'instant — partage le lien à tes collègues !</p>';
+      document.getElementById('reco-preview').textContent = '';
+      return;
+    }
+    goldbookEntries.forEach(function(e){
+      const entry = document.createElement('div');
+      entry.className = 'goldbook-entry';
+      entry.id = 'entry-' + e.id;
+      entry.innerHTML =
+        '<div class="entry-author">' + e.author + '</div>' +
+        '<div class="entry-relation">' + e.relation + '</div>' +
+        '<div class="entry-text">« ' + e.text + ' »</div>' +
+        '<button class="entry-delete" onclick="deleteEntry(' + e.id + ')" title="Supprimer ce mot">🗑️</button>';
+      container.appendChild(entry);
+    });
+    generateReco();
+  }
+
+  function deleteEntry(id){
+    goldbookEntries = goldbookEntries.filter(function(e){ return e.id !== id; });
+    renderGoldbook();
+  }
+
+  function generateReco(){
+    if(goldbookEntries.length === 0){
+      document.getElementById('reco-preview').textContent = '';
+      return;
+    }
+    document.getElementById('reco-loading').style.display = 'block';
+    document.getElementById('reco-preview').textContent = '';
+
+    const textes = goldbookEntries.map(function(e){
+      return e.author + ' (' + e.relation + ') : « ' + e.text + ' »';
+    }).join('\n');
+
+    const prompt = "Voici des témoignages laissés par des collègues pour quelqu'un qui quitte son entreprise :\n\n" + textes + "\n\nRédige un court paragraphe de 4 à 6 lignes en première personne (\"Mes collègues retiennent...\") qui synthétise ces témoignages de façon professionnelle et utilisable sur LinkedIn, dans la section description d'une expérience. Pas de titre, pas de bullet points, juste le paragraphe.";
+
+    fetch('https://api.anthropic.com/v1/messages', {
+      method:'POST',
+      headers:{ 'Content-Type':'application/json' },
+      body: JSON.stringify({
+        model:'claude-sonnet-4-6',
+        max_tokens:400,
+        messages:[{ role:'user', content: prompt }]
+      })
+    })
+    .then(function(r){ return r.json(); })
+    .then(function(data){
+      document.getElementById('reco-loading').style.display = 'none';
+      const text = data.content && data.content[0] ? data.content[0].text : '';
+      document.getElementById('reco-preview').textContent = text || 'Erreur de génération — réessaie.';
+    })
+    .catch(function(){
+      document.getElementById('reco-loading').style.display = 'none';
+      document.getElementById('reco-preview').textContent = 'Impossible de générer la synthèse pour l\'instant. Réessaie dans quelques secondes.';
+    });
+  }
+
+  function regenerateReco(){ generateReco(); }
+
+  function copyGoldbookUrl(){
+    const text = document.getElementById('goldbook-url').textContent;
+    navigator.clipboard.writeText(text).then(function(){
+      const btn = document.getElementById('copy-goldbook-btn');
+      const orig = btn.textContent;
+      btn.textContent = 'Copié !';
+      setTimeout(function(){ btn.textContent = orig; }, 1500);
+    });
+  }
+
+  function copyReco(){
+    const text = document.getElementById('reco-preview').textContent;
+    if(!text) return;
+    navigator.clipboard.writeText(text).then(function(){
+      const btn = document.getElementById('copy-reco-btn');
+      const orig = btn.textContent;
+      btn.textContent = 'Copié !';
+      setTimeout(function(){ btn.textContent = orig; }, 1500);
+    });
+  }
+
+  function renderVenues(){ /* remplacé par openPrivateaser */ }
+
+
+  function copyLetter(){
+    const text = document.getElementById('letter-preview').textContent;
+    navigator.clipboard.writeText(text).then(function(){
+      const btn = document.getElementById('copy-btn');
+      const original = btn.textContent;
+      btn.textContent = 'Copié !';
+      setTimeout(function(){ btn.textContent = original; }, 1500);
+    });
+  }
+
+  function downloadLetter(){
+    const text = document.getElementById('letter-preview').textContent;
+    const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'lettre-de-demission.txt';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
+  setTipOfDay();
+  updateNav();
+
+  const dateField = document.getElementById('l-date');
+  if(dateField){
+    const today = new Date();
+    const iso = today.getFullYear() + '-' + String(today.getMonth()+1).padStart(2,'0') + '-' + String(today.getDate()).padStart(2,'0');
+    dateField.value = iso;
+  }
+
+  const dateField3 = document.getElementById('l3-date');
+  if(dateField3){
+    const today3 = new Date();
+    const iso3 = today3.getFullYear() + '-' + String(today3.getMonth()+1).padStart(2,'0') + '-' + String(today3.getDate()).padStart(2,'0');
+    dateField3.value = iso3;
+  }
+
+  ['cd-date', 'm-date', 'i-date'].forEach(function(fieldId){
+    const f = document.getElementById(fieldId);
+    if(f){
+      const t = new Date();
+      f.value = t.getFullYear() + '-' + String(t.getMonth()+1).padStart(2,'0') + '-' + String(t.getDate()).padStart(2,'0');
+    }
+  });
+
+  // Si on arrive via un lien countdown, on affiche la vue directement
+  checkCountdownRoute();
+</script>
+
+</body>
+</html>
