@@ -1264,20 +1264,6 @@
       window.open('https://slack.com', '_blank');
     });
   }
-    const { prenom, lieu, dateStr, heure, mot } = getCalInfos();
-
-    const base = 'https://romainleroy97.github.io/mon-petit-pot-de-depart/invite/';
-    const params = new URLSearchParams();
-    if(prenom) params.set('prenom', prenom);
-    if(dateStr) params.set('date', dateStr);
-    if(heure) params.set('heure', heure);
-    if(lieu) params.set('lieu', lieu);
-    if(mot) params.set('mot', mot);
-    const inviteUrl = base + '?' + params.toString();
-
-    const url = 'https://wa.me/?text=' + encodeURIComponent(inviteUrl);
-    window.open(url, '_blank');
-  }
 
   // ---- Deep link Privateaser ----
   function openPrivateaser(){
