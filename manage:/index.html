@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mon livre d'or — Mon petit pot de départ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-dark:#1F1147; --bg-paper:#FFF4E3; --coral:#FF5A36; --yellow:#FFC93C;
+    --pink:#FF3D8A; --teal:#00B88A; --ink:#1F1147; --paper-text:#4A3D78;
+    --light-text:#FFF4E3; --font-display:'Bricolage Grotesque',sans-serif;
+    --font-body:'Inter',sans-serif; --font-hand:'Caveat',cursive;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--font-body);color:var(--ink);background:var(--bg-paper);-webkit-font-smoothing:antialiased;}
+  header{background:var(--bg-dark);padding:16px 24px;display:flex;align-items:center;gap:10px;}
+  .logo{font-family:var(--font-display);font-weight:700;font-size:18px;color:var(--light-text);text-decoration:none;display:flex;align-items:center;gap:10px;}
+  .logo-badge{width:32px;height:32px;border-radius:50%;background:var(--coral);border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;}
+  main{max-width:720px;margin:0 auto;padding:48px 24px 100px;}
+  h1{font-family:var(--font-display);font-weight:800;font-size:clamp(26px,4vw,36px);margin-bottom:8px;}
+  .page-sub{font-size:16px;color:var(--paper-text);margin-bottom:36px;}
+  .section-title{font-family:var(--font-display);font-weight:700;font-size:17px;margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+  .reco-card{background:#fff;border:2px solid var(--ink);border-radius:14px;padding:18px 20px;margin-bottom:12px;position:relative;padding-right:56px;box-shadow:4px 4px 0 var(--ink);}
+  .reco-author{font-family:var(--font-display);font-weight:700;font-size:14px;margin-bottom:2px;}
+  .reco-role{font-family:var(--font-hand);font-size:17px;color:var(--pink);margin-bottom:8px;}
+  .reco-text{font-size:14px;color:var(--paper-text);line-height:1.6;}
+  .delete-btn{position:absolute;top:16px;right:16px;background:transparent;border:none;cursor:pointer;font-size:20px;color:var(--paper-text);}
+  .delete-btn:hover{color:var(--coral);}
+  .btn-primary{font-family:var(--font-display);font-weight:700;font-size:15px;background:var(--ink);color:var(--light-text);border:2px solid var(--ink);border-radius:10px;padding:0 28px;height:48px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;}
+  .btn-primary:hover{background:var(--coral);border-color:var(--coral);}
+  .btn-secondary{font-family:var(--font-display);font-weight:700;font-size:14px;background:transparent;color:var(--ink);border:2px solid var(--ink);border-radius:10px;padding:0 20px;height:44px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;}
+  .btn-secondary:hover{background:var(--ink);color:var(--bg-paper);}
+  .btn-primary:disabled{opacity:.5;cursor:not-allowed;}
+  .published-box{background:var(--teal);border:2px solid var(--ink);border-radius:14px;padding:20px;color:#fff;margin-top:24px;}
+  .published-box h3{font-family:var(--font-display);font-weight:700;font-size:17px;margin-bottom:8px;}
+  .url-box{font-family:monospace;font-size:12px;background:rgba(255,255,255,.2);border-radius:8px;padding:8px 12px;word-break:break-all;margin-bottom:12px;}
+  .empty{text-align:center;padding:32px;color:var(--paper-text);}
+  .empty .emoji{font-size:40px;margin-bottom:12px;}
+  .divider{border:none;border-top:2px dashed var(--ink);margin:32px 0;}
+  .publish-section{background:#fff;border:2px solid var(--ink);border-radius:14px;padding:24px;box-shadow:4px 4px 0 var(--ink);}
+  .publish-section h2{font-family:var(--font-display);font-weight:700;font-size:18px;margin-bottom:6px;}
+  .publish-section p{font-size:14px;color:var(--paper-text);margin-bottom:18px;}
+  @media(max-width:500px){main{padding:32px 18px 80px;}}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="https://romainleroy97.github.io/mon-petit-pot-de-depart/">
+    <span class="logo-badge" aria-hidden="true">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1F1147" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5"/><path d="M13.8 12H3"/></svg>
+    </span>
+    Mon petit pot de départ
+  </a>
+</header>
+
+<main>
+  <div id="loading" style="text-align:center;padding:60px 0;color:var(--paper-text);">Chargement de ton livre d'or…</div>
+
+  <div id="app" style="display:none;">
+    <h1 id="page-title">Ton livre d'or</h1>
+    <p class="page-sub" id="page-sub">Voici les mots laissés par tes collègues. Supprime ceux que tu ne souhaites pas garder, puis publie ta page LinkedIn.</p>
+
+    <div class="section-title">💬 Recommandations reçues <span id="count-label" style="font-weight:400;font-size:14px;color:var(--paper-text);"></span></div>
+
+    <div id="recos-list"></div>
+
+    <hr class="divider">
+
+    <div id="publish-section" class="publish-section">
+      <h2>Créer ma page LinkedIn</h2>
+      <p>Une fois publié, tu obtiens un lien permanent à coller dans la section "Médias" de ton expérience LinkedIn.</p>
+      <button class="btn-primary" onclick="publish()" id="publish-btn">🚀 Publier ma page</button>
+    </div>
+
+    <div id="published-section" class="published-box" style="display:none;">
+      <h3>🎉 Ta page est en ligne !</h3>
+      <p style="font-size:14px;margin-bottom:10px;opacity:.9;">Colle ce lien dans la section "Médias" de ton expérience LinkedIn :</p>
+      <div class="url-box" id="goldbook-url"></div>
+      <button class="btn-secondary" onclick="copyGoldbookUrl()" id="copy-gb-btn" style="background:rgba(255,255,255,.2);border-color:rgba(255,255,255,.5);color:#fff;">Copier le lien</button>
+    </div>
+  </div>
+
+  <div id="error-state" style="display:none;text-align:center;padding:60px 0;">
+    <p style="font-size:48px;margin-bottom:16px;">🔐</p>
+    <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:22px;margin-bottom:8px;">Accès non autorisé</h2>
+    <p style="color:var(--paper-text);">Ce lien privé est incorrect ou a expiré.</p>
+  </div>
+</main>
+
+<script>
+  const SUPABASE_URL = 'https://tmcaqioutnpbacdrjmmq.supabase.co';
+  const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRtY2FxaW91dG5wYmFjZHJqbW1xIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODM3ODg2MDQsImV4cCI6MjA5OTM2NDYwNH0.ktgbnZ31HzteoRYDT1sUi6D5ylq3ADxHjST5cI0e5Pk';
+  const BASE_URL = 'https://romainleroy97.github.io/mon-petit-pot-de-depart';
+
+  const params = new URLSearchParams(window.location.search);
+  const livreId = params.get('id');
+  const ownerKey = params.get('key');
+  let recos = [];
+  let isPublished = false;
+
+  async function init(){
+    if(!livreId || !ownerKey){ showError(); return; }
+    try {
+      const res = await fetch(SUPABASE_URL+'/rest/v1/livres_d_or?id=eq.'+livreId+'&owner_key=eq.'+ownerKey+'&select=prenom,is_published', {
+        headers: { 'apikey': SUPABASE_KEY, 'Authorization': 'Bearer '+SUPABASE_KEY }
+      });
+      const data = await res.json();
+      if(!data || data.length === 0){ showError(); return; }
+
+      const prenom = data[0].prenom;
+      isPublished = data[0].is_published;
+      document.getElementById('page-title').textContent = 'Livre d\'or de '+prenom;
+      document.getElementById('page-sub').textContent = 'Voici les mots laissés par tes collègues, '+prenom+'. Supprime ceux que tu ne souhaites pas garder, puis publie ta page LinkedIn.';
+
+      await loadRecos();
+
+      if(isPublished){
+        showPublished();
+      }
+
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('app').style.display = 'block';
+    } catch(e){
+      showError();
+    }
+  }
+
+  async function loadRecos(){
+    const res = await fetch(SUPABASE_URL+'/rest/v1/recommandations?livre_d_or_id=eq.'+livreId+'&consented=eq.true&order=created_at.asc', {
+      headers: { 'apikey': SUPABASE_KEY, 'Authorization': 'Bearer '+SUPABASE_KEY }
+    });
+    recos = await res.json();
+    renderRecos();
+  }
+
+  function renderRecos(){
+    const list = document.getElementById('recos-list');
+    const label = document.getElementById('count-label');
+    label.textContent = '('+recos.length+' message'+(recos.length > 1 ? 's' : '')+')';
+
+    if(recos.length === 0){
+      list.innerHTML = '<div class="empty"><div class="emoji">💬</div><p>Aucun message pour l\'instant.<br>Partage ton lien livre d\'or à tes collègues !</p></div>';
+      return;
+    }
+
+    list.innerHTML = '';
+    recos.forEach(function(r){
+      const card = document.createElement('div');
+      card.className = 'reco-card';
+      card.id = 'reco-'+r.id;
+      card.innerHTML =
+        '<div class="reco-author">'+escHtml(r.auteur_nom)+'</div>'+
+        '<div class="reco-role">'+escHtml(r.auteur_role || '')+'</div>'+
+        '<div class="reco-text">« '+escHtml(r.texte)+' »</div>'+
+        '<button class="delete-btn" onclick="deleteReco(\''+r.id+'\')" title="Supprimer">🗑️</button>';
+      list.appendChild(card);
+    });
+  }
+
+  async function deleteReco(id){
+    if(!confirm('Supprimer ce message définitivement ?')) return;
+    try {
+      await fetch(SUPABASE_URL+'/rest/v1/recommandations?id=eq.'+id, {
+        method: 'DELETE',
+        headers: { 'apikey': SUPABASE_KEY, 'Authorization': 'Bearer '+SUPABASE_KEY }
+      });
+      recos = recos.filter(function(r){ return r.id !== id; });
+      renderRecos();
+    } catch(e){
+      alert('Erreur lors de la suppression. Réessaie.');
+    }
+  }
+
+  async function publish(){
+    if(recos.length === 0){ alert('Pas encore de messages à publier. Attends que tes collègues écrivent !'); return; }
+    if(!confirm('Publier ta page LinkedIn ? Les '+ recos.length +' messages conservés seront visibles publiquement.')) return;
+
+    const btn = document.getElementById('publish-btn');
+    btn.textContent = 'Publication en cours…'; btn.disabled = true;
+
+    try {
+      await fetch(SUPABASE_URL+'/rest/v1/livres_d_or?id=eq.'+livreId+'&owner_key=eq.'+ownerKey, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': SUPABASE_KEY,
+          'Authorization': 'Bearer '+SUPABASE_KEY,
+          'Prefer': 'return=minimal'
+        },
+        body: JSON.stringify({ is_published: true })
+      });
+      isPublished = true;
+      showPublished();
+    } catch(e){
+      alert('Erreur lors de la publication. Réessaie.');
+      btn.textContent = '🚀 Publier ma page'; btn.disabled = false;
+    }
+  }
+
+  function showPublished(){
+    const goldbookUrl = BASE_URL+'/goldbook/?id='+livreId;
+    document.getElementById('goldbook-url').textContent = goldbookUrl;
+    document.getElementById('publish-section').style.display = 'none';
+    document.getElementById('published-section').style.display = 'block';
+  }
+
+  function copyGoldbookUrl(){
+    const text = document.getElementById('goldbook-url').textContent;
+    navigator.clipboard.writeText(text).then(function(){
+      const btn = document.getElementById('copy-gb-btn');
+      const orig = btn.textContent; btn.textContent = 'Copié !';
+      setTimeout(function(){ btn.textContent = orig; }, 1500);
+    });
+  }
+
+  function showError(){
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('error-state').style.display = 'block';
+  }
+
+  function escHtml(str){
+    return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  init();
+</script>
+</body>
+</html>

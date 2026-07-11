@@ -19,103 +19,64 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600&family=Caveat:wght@600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg-dark:#1F1147;
-    --bg-paper:#FFF4E3;
-    --coral:#FF5A36;
-    --yellow:#FFC93C;
-    --pink:#FF3D8A;
-    --teal:#00B88A;
-    --ink:#1F1147;
-    --paper-text:#4A3D78;
-    --light-text:#FFF4E3;
-    --font-display:'Bricolage Grotesque', sans-serif;
-    --font-body:'Inter', sans-serif;
-    --font-hand:'Caveat', cursive;
+    --bg-dark:#1F1147; --bg-paper:#FFF4E3; --coral:#FF5A36; --yellow:#FFC93C;
+    --pink:#FF3D8A; --teal:#00B88A; --ink:#1F1147; --paper-text:#4A3D78;
+    --light-text:#FFF4E3; --font-display:'Bricolage Grotesque',sans-serif;
+    --font-body:'Inter',sans-serif; --font-hand:'Caveat',cursive;
   }
-  *{box-sizing:border-box; margin:0; padding:0;}
+  *{box-sizing:border-box;margin:0;padding:0;}
   html{scroll-behavior:smooth;}
-  body{font-family:var(--font-body); color:var(--ink); background:var(--bg-paper); line-height:1.6; -webkit-font-smoothing:antialiased;}
-  a{color:inherit;}
-  svg{display:block;}
-  :focus-visible{outline:3px solid var(--pink); outline-offset:3px;}
-
-  /* Header */
-  header{position:sticky; top:0; z-index:50; background:var(--bg-paper); border-bottom:2px solid var(--ink);}
-  .header-inner{display:flex; align-items:center; padding:16px 24px; max-width:1080px; margin:0 auto;}
-  .logo{display:flex; align-items:center; gap:10px; font-family:var(--font-display); font-weight:700; font-size:18px; text-decoration:none;}
-  .logo-badge{width:34px; height:34px; border-radius:50%; background:var(--coral); border:2px solid var(--ink); display:flex; align-items:center; justify-content:center; flex-shrink:0;}
-
-  /* Step hero */
-  .step-hero{background:var(--bg-dark); color:var(--light-text); padding:56px 24px 48px; text-align:center;}
-  .eyebrow{font-family:var(--font-hand); font-size:24px; color:var(--yellow);}
-  h1{font-family:var(--font-display); font-weight:800; font-size:clamp(30px,5vw,48px); line-height:1.1; margin:12px 0 16px;}
-  h1 .highlight{background:var(--coral); color:var(--ink); padding:2px 12px; border-radius:8px; box-decoration-break:clone; -webkit-box-decoration-break:clone;}
-  .step-hero p{font-size:17px; color:rgba(255,244,227,.82); max-width:520px; margin:0 auto;}
-
-  /* Main */
-  main{max-width:960px; margin:0 auto; padding:48px 24px 100px; display:flex; flex-direction:column; gap:40px;}
-
-  /* Blocks */
-  .block{background:#fff; border:2px solid var(--ink); border-radius:16px; padding:28px; position:relative; box-shadow:6px 6px 0 var(--ink);}
-  .block::before{content:''; position:absolute; top:-11px; left:36px; width:18px; height:18px; border-radius:50%; background:var(--pin,var(--coral)); border:2px solid var(--ink);}
-  .block-1{--pin:var(--coral);}
-  .block-2{--pin:var(--yellow);}
-  .block h2{font-family:var(--font-display); font-weight:700; font-size:20px; margin-bottom:6px;}
-  .block .block-sub{font-size:14px; color:var(--paper-text); margin-bottom:22px;}
-
-  /* Fields */
+  body{font-family:var(--font-body);color:var(--ink);background:var(--bg-paper);line-height:1.6;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;} svg{display:block;} :focus-visible{outline:3px solid var(--pink);outline-offset:3px;}
+  header{position:sticky;top:0;z-index:50;background:var(--bg-paper);border-bottom:2px solid var(--ink);}
+  .header-inner{display:flex;align-items:center;padding:16px 24px;max-width:1080px;margin:0 auto;}
+  .logo{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:700;font-size:18px;text-decoration:none;}
+  .logo-badge{width:34px;height:34px;border-radius:50%;background:var(--coral);border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .step-hero{background:var(--bg-dark);color:var(--light-text);padding:56px 24px 48px;text-align:center;}
+  .eyebrow{font-family:var(--font-hand);font-size:24px;color:var(--yellow);}
+  h1{font-family:var(--font-display);font-weight:800;font-size:clamp(30px,5vw,48px);line-height:1.1;margin:12px 0 16px;}
+  h1 .highlight{background:var(--coral);color:var(--ink);padding:2px 12px;border-radius:8px;box-decoration-break:clone;-webkit-box-decoration-break:clone;}
+  .step-hero p{font-size:17px;color:rgba(255,244,227,.82);max-width:520px;margin:0 auto;}
+  main{max-width:960px;margin:0 auto;padding:48px 24px 100px;display:flex;flex-direction:column;gap:40px;}
+  .block{background:#fff;border:2px solid var(--ink);border-radius:16px;padding:28px;position:relative;box-shadow:6px 6px 0 var(--ink);}
+  .block::before{content:'';position:absolute;top:-11px;left:36px;width:18px;height:18px;border-radius:50%;background:var(--pin,var(--coral));border:2px solid var(--ink);}
+  .block-1{--pin:var(--coral);} .block-2{--pin:var(--yellow);}
+  .block h2{font-family:var(--font-display);font-weight:700;font-size:20px;margin-bottom:6px;}
+  .block .block-sub{font-size:14px;color:var(--paper-text);margin-bottom:22px;}
   .field{margin-bottom:16px;}
-  .field label{display:block; font-size:13px; font-weight:500; margin-bottom:6px;}
-  .field input{width:100%; height:44px; border:2px solid var(--ink); border-radius:10px; padding:0 14px; font-family:var(--font-body); font-size:15px; background:var(--bg-paper); color:var(--ink);}
-  .field input:focus{outline:3px solid var(--pink); outline-offset:1px;}
-  .field-select{width:100%; height:44px; border:2px solid var(--ink); border-radius:10px; padding:0 14px; font-family:var(--font-body); font-size:15px; background:var(--bg-paper); color:var(--ink);}
-
-  /* Buttons */
-  .send-btn{font-family:var(--font-display); font-weight:700; font-size:14px; background:var(--ink); color:var(--bg-paper); border:2px solid var(--ink); border-radius:10px; padding:0 20px; height:44px; cursor:pointer; display:inline-flex; align-items:center; gap:8px;}
-  .send-btn:hover{background:var(--coral); border-color:var(--coral); color:var(--ink);}
-  .btn-secondary{font-family:var(--font-display); font-weight:700; font-size:14px; background:transparent; color:var(--ink); border:2px solid var(--ink); border-radius:10px; padding:0 20px; height:44px; cursor:pointer; display:inline-flex; align-items:center; gap:8px;}
-  .btn-secondary:hover{background:var(--ink); color:var(--bg-paper);}
-
-  /* Tunnel */
-  .tunnel-step{display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; flex:1; padding:12px 8px; border-radius:12px; cursor:pointer; border:2px solid var(--ink); background:#fff; transition:background .15s ease; height:80px; text-align:center;}
-  .tunnel-step.active{background:var(--ink); color:var(--light-text);}
-  .tunnel-step.done{background:var(--teal); color:#fff;}
-  .tunnel-num{font-family:var(--font-display); font-weight:800; font-size:18px; line-height:1;}
-  .tunnel-label{font-size:11px; font-weight:500; line-height:1.3;}
-  .tunnel-arrow{font-size:18px; color:var(--paper-text); padding:0 8px; flex-shrink:0;}
+  .field label{display:block;font-size:13px;font-weight:500;margin-bottom:6px;}
+  .field input{width:100%;height:44px;border:2px solid var(--ink);border-radius:10px;padding:0 14px;font-family:var(--font-body);font-size:15px;background:var(--bg-paper);color:var(--ink);}
+  .field input:focus{outline:3px solid var(--pink);outline-offset:1px;}
+  .send-btn{font-family:var(--font-display);font-weight:700;font-size:14px;background:var(--ink);color:var(--bg-paper);border:2px solid var(--ink);border-radius:10px;padding:0 20px;height:44px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;}
+  .send-btn:hover{background:var(--coral);border-color:var(--coral);color:var(--ink);}
+  .btn-secondary{font-family:var(--font-display);font-weight:700;font-size:14px;background:transparent;color:var(--ink);border:2px solid var(--ink);border-radius:10px;padding:0 20px;height:44px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;}
+  .btn-secondary:hover{background:var(--ink);color:var(--bg-paper);}
+  .tunnel-step{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;flex:1;padding:12px 8px;border-radius:12px;cursor:pointer;border:2px solid var(--ink);background:#fff;transition:background .15s ease;height:80px;text-align:center;}
+  .tunnel-step.active{background:var(--ink);color:var(--light-text);}
+  .tunnel-step.done{background:var(--teal);color:#fff;}
+  .tunnel-num{font-family:var(--font-display);font-weight:800;font-size:18px;line-height:1;}
+  .tunnel-label{font-size:11px;font-weight:500;line-height:1.3;}
+  .tunnel-arrow{font-size:18px;color:var(--paper-text);padding:0 8px;flex-shrink:0;}
   .tunnel-panel{width:100%;}
-
-  /* Venue search */
-  .venue-search-row{display:flex; gap:10px; margin-top:14px; flex-wrap:wrap;}
-  .venue-search-row input{flex:1; min-width:200px; height:44px; border:2px solid var(--ink); border-radius:10px; padding:0 14px; font-family:var(--font-body); font-size:15px; background:var(--bg-paper); color:var(--ink);}
-
-  /* Invitation card */
-  .generator-grid{display:grid; grid-template-columns:1fr 1fr; gap:32px;}
-  .invite-card{background:linear-gradient(135deg, #FF5A36 0%, #FF3D8A 100%); color:#fff; border:2px solid var(--ink); border-radius:16px; padding:32px 28px; text-align:center; box-shadow:6px 6px 0 var(--ink); margin-top:0; position:relative; overflow:hidden;}
-  .invite-card::before{content:'🎉'; position:absolute; top:12px; left:16px; font-size:24px; opacity:.5;}
-  .invite-card::after{content:'🥂'; position:absolute; bottom:12px; right:16px; font-size:24px; opacity:.5;}
-  .invite-card .invite-eyebrow{font-family:var(--font-hand); font-size:22px; color:var(--yellow); margin-bottom:6px;}
-  .invite-card h3{font-family:var(--font-display); font-weight:800; font-size:24px; margin-bottom:14px; line-height:1.15;}
-  .invite-card .invite-details{font-size:15px; line-height:1.7; margin-bottom:16px;}
-  .invite-card .invite-cta{display:inline-block; background:#fff; color:var(--ink); font-family:var(--font-display); font-weight:700; font-size:13px; padding:8px 18px; border-radius:100px; border:2px solid var(--ink); margin-top:8px;}
-  .letter-actions{display:flex; gap:10px; margin-top:16px; flex-wrap:wrap;}
-
-  /* Calendar dropdown */
+  .venue-search-row{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;}
+  .venue-search-row input{flex:1;min-width:200px;height:44px;border:2px solid var(--ink);border-radius:10px;padding:0 14px;font-family:var(--font-body);font-size:15px;background:var(--bg-paper);color:var(--ink);}
+  .generator-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;}
+  .invite-card{background:linear-gradient(135deg,#FF5A36 0%,#FF3D8A 100%);color:#fff;border:2px solid var(--ink);border-radius:16px;padding:32px 28px;text-align:center;box-shadow:6px 6px 0 var(--ink);position:relative;overflow:hidden;}
+  .invite-card::before{content:'🎉';position:absolute;top:12px;left:16px;font-size:24px;opacity:.5;}
+  .invite-card::after{content:'🥂';position:absolute;bottom:12px;right:16px;font-size:24px;opacity:.5;}
+  .invite-card .invite-eyebrow{font-family:var(--font-hand);font-size:22px;color:var(--yellow);margin-bottom:6px;}
+  .invite-card h3{font-family:var(--font-display);font-weight:800;font-size:24px;margin-bottom:14px;line-height:1.15;}
+  .invite-card .invite-details{font-size:15px;line-height:1.7;margin-bottom:16px;}
+  .invite-card .invite-cta{display:inline-block;background:#fff;color:var(--ink);font-family:var(--font-display);font-weight:700;font-size:13px;padding:8px 18px;border-radius:100px;border:2px solid var(--ink);margin-top:8px;}
+  .letter-actions{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;}
+  .url-box{font-family:monospace;font-size:12px;background:#fff;border:2px solid var(--ink);border-radius:8px;padding:8px 12px;word-break:break-all;margin-bottom:10px;}
+  .info-box{background:var(--bg-paper);border:2px solid var(--ink);border-radius:12px;padding:16px;margin-bottom:12px;}
+  .info-box-teal{background:var(--bg-paper);border:2px solid var(--teal);border-radius:12px;padding:16px;}
   #cal-dropdown button:hover{background:var(--bg-paper);}
-
-  /* Footer */
-  footer{background:var(--bg-dark); color:rgba(255,244,227,.6); padding:44px 24px; text-align:center; font-size:13px;}
-  footer .foot-logo{font-family:var(--font-display); font-weight:700; color:var(--light-text); font-size:17px; margin-bottom:6px;}
-
-  @media (max-width:760px){
-    .generator-grid{grid-template-columns:1fr;}
-    .header-inner{padding:14px 18px;}
-    main{padding:32px 18px 80px;}
-    .block{padding:22px 20px;}
-  }
-  @media (prefers-reduced-motion: reduce){
-    *{animation:none !important; transition:none !important;}
-  }
+  footer{background:var(--bg-dark);color:rgba(255,244,227,.6);padding:44px 24px;text-align:center;font-size:13px;}
+  footer .foot-logo{font-family:var(--font-display);font-weight:700;color:var(--light-text);font-size:17px;margin-bottom:6px;}
+  @media(max-width:760px){.generator-grid{grid-template-columns:1fr;}.header-inner{padding:14px 18px;}main{padding:32px 18px 80px;}.block{padding:22px 20px;}}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
 </style>
 </head>
 <body>
@@ -139,8 +100,7 @@
 
 <main>
 
-  <!-- Indicateur de progression -->
-  <div style="display:flex; align-items:center; gap:0; max-width:500px; margin:0 auto;">
+  <div style="display:flex;align-items:center;gap:0;max-width:500px;margin:0 auto;">
     <div class="tunnel-step active" id="ts-1" onclick="goTunnelStep(1)" style="flex:1;">
       <span class="tunnel-num">1</span>
       <span class="tunnel-label">Trouver le lieu</span>
@@ -152,11 +112,10 @@
     </div>
   </div>
 
-  <!-- Étape 1 — Le lieu -->
+  <!-- Étape 1 -->
   <div class="block block-1 tunnel-panel" id="tp-1">
     <h2>Trouver le lieu 📍</h2>
-    <p class="block-sub">Entre ta ville, on ouvre Privateaser avec les bars privatisables filtrés pour un pot de départ — tu choisis et tu réserves directement.</p>
-
+    <p class="block-sub">Entre ta ville, on ouvre Privateaser avec les bars privatisables filtrés pour un pot de départ.</p>
     <div class="field">
       <label for="v-ville">Ta ville ou ton quartier</label>
       <div class="venue-search-row">
@@ -164,20 +123,17 @@
         <button class="send-btn" onclick="openPrivateaser()">Chercher 🔍</button>
       </div>
     </div>
-
-    <div id="venue-searching" style="display:none; font-size:13px; color:var(--paper-text); margin-top:12px;">Géolocalisation en cours…</div>
-
+    <div id="venue-searching" style="display:none;font-size:13px;color:var(--paper-text);margin-top:12px;">Géolocalisation en cours…</div>
     <div class="field" style="margin-top:20px;">
       <label for="v-lieu-choisi">Tu as trouvé ton lieu ? Note-le ici</label>
       <input type="text" id="v-lieu-choisi" placeholder="Ex : Le Perchoir, Paris 11e" oninput="syncLieuToInvite()">
     </div>
-
     <div style="margin-top:20px;">
-      <button class="send-btn" onclick="goTunnelStep(2)" style="height:44px; padding:0 22px;">Suivant →</button>
+      <button class="send-btn" onclick="goTunnelStep(2)" style="height:44px;padding:0 22px;">Suivant →</button>
     </div>
   </div>
 
-  <!-- Étape 2 — L'invitation -->
+  <!-- Étape 2 -->
   <div class="block block-2 tunnel-panel" id="tp-2" style="display:none;">
     <h2>L'invitation 🎉</h2>
     <p class="block-sub">Remplis les infos, la carte se génère en direct.</p>
@@ -208,9 +164,8 @@
           <button class="send-btn" id="copy-invite-btn" onclick="copyInviteText()">Copier le texte</button>
         </div>
       </div>
-
       <div>
-        <div class="invite-card" id="invite-card">
+        <div class="invite-card">
           <p class="invite-eyebrow">Pot de départ !</p>
           <h3 id="invite-title">[Ton prénom] vous invite</h3>
           <p class="invite-details" id="invite-details"><strong>[date]</strong> à <strong>[heure]</strong><br><strong>[lieu]</strong></p>
@@ -219,42 +174,56 @@
       </div>
     </div>
 
-    <!-- Actions -->
-    <div style="margin-top:28px; padding-top:22px; border-top:2px dashed var(--ink); display:flex; gap:10px; flex-wrap:wrap;">
+    <!-- Livre d'or -->
+    <div style="margin-top:28px;padding-top:22px;border-top:2px dashed var(--ink);">
+      <h3 style="font-family:var(--font-display);font-weight:700;font-size:17px;margin-bottom:6px;">✍️ Livre d'or & recommandations LinkedIn</h3>
+      <p style="font-size:14px;color:var(--paper-text);margin-bottom:16px;">Active le livre d'or pour que tes collègues puissent laisser un mot — et transforme-les en recommandations LinkedIn.</p>
 
-      <!-- Créer un événement -->
-      <div style="position:relative; flex:1; min-width:160px;">
-        <button class="send-btn" onclick="toggleCalDropdown()" id="cal-btn" style="width:100%; justify-content:center; height:48px;">
+      <div id="goldbook-inactive">
+        <button class="send-btn" onclick="createGoldbook()" id="goldbook-create-btn">Activer mon livre d'or</button>
+      </div>
+
+      <div id="goldbook-active" style="display:none;">
+        <div class="info-box">
+          <p style="font-size:13px;font-weight:500;margin-bottom:8px;">🔗 Lien à partager avec tes collègues</p>
+          <div class="url-box" id="recommend-url-display"></div>
+          <button class="send-btn" onclick="copyRecommendUrl()" id="copy-recommend-btn">Copier le lien</button>
+        </div>
+        <div class="info-box-teal" style="margin-top:12px;">
+          <p style="font-size:13px;font-weight:500;margin-bottom:4px;">🔐 Ton lien privé — garde-le précieusement</p>
+          <p style="font-size:12px;color:var(--paper-text);margin-bottom:8px;">C'est la seule façon d'accéder à tes recommandations et de les publier.</p>
+          <div class="url-box" id="manage-url-display"></div>
+          <button class="btn-secondary" onclick="copyManageUrl()" id="copy-manage-btn">Copier le lien privé</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Actions -->
+    <div style="margin-top:28px;padding-top:22px;border-top:2px dashed var(--ink);display:flex;gap:10px;flex-wrap:wrap;">
+      <div style="position:relative;flex:1;min-width:160px;">
+        <button class="send-btn" onclick="toggleCalDropdown()" id="cal-btn" style="width:100%;justify-content:center;height:48px;">
           📅 Créer un événement <span id="cal-arrow">▾</span>
         </button>
-        <div id="cal-dropdown" style="display:none; position:absolute; top:calc(100% + 8px); left:0; right:0; background:#fff; border:2px solid var(--ink); border-radius:12px; box-shadow:4px 4px 0 var(--ink); z-index:10; overflow:hidden; min-width:200px;">
-          <button onclick="openCalendar('google')" style="width:100%; text-align:left; padding:12px 16px; font-family:var(--font-body); font-size:14px; background:transparent; border:none; border-bottom:1px solid #eee; cursor:pointer; display:flex; align-items:center; gap:10px;">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" stroke="#1F1147" stroke-width="2"/><path d="M16 2v4M8 2v4M3 10h18" stroke="#1F1147" stroke-width="2"/></svg>
-            Google Calendar
+        <div id="cal-dropdown" style="display:none;position:absolute;top:calc(100% + 8px);left:0;right:0;background:#fff;border:2px solid var(--ink);border-radius:12px;box-shadow:4px 4px 0 var(--ink);z-index:10;overflow:hidden;min-width:200px;">
+          <button onclick="openCalendar('google')" style="width:100%;text-align:left;padding:12px 16px;font-family:var(--font-body);font-size:14px;background:transparent;border:none;border-bottom:1px solid #eee;cursor:pointer;display:flex;align-items:center;gap:10px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" stroke="#1F1147" stroke-width="2"/><path d="M16 2v4M8 2v4M3 10h18" stroke="#1F1147" stroke-width="2"/></svg>Google Calendar
           </button>
-          <button onclick="openCalendar('apple')" style="width:100%; text-align:left; padding:12px 16px; font-family:var(--font-body); font-size:14px; background:transparent; border:none; border-bottom:1px solid #eee; cursor:pointer; display:flex; align-items:center; gap:10px;">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M17 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z" stroke="#1F1147" stroke-width="2"/></svg>
-            Apple Calendar (.ics)
+          <button onclick="openCalendar('apple')" style="width:100%;text-align:left;padding:12px 16px;font-family:var(--font-body);font-size:14px;background:transparent;border:none;border-bottom:1px solid #eee;cursor:pointer;display:flex;align-items:center;gap:10px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M17 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z" stroke="#1F1147" stroke-width="2"/></svg>Apple Calendar (.ics)
           </button>
-          <button onclick="openCalendar('outlook')" style="width:100%; text-align:left; padding:12px 16px; font-family:var(--font-body); font-size:14px; background:transparent; border:none; cursor:pointer; display:flex; align-items:center; gap:10px;">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" stroke="#1F1147" stroke-width="2"/><path d="M2 8l10 6 10-6" stroke="#1F1147" stroke-width="2"/></svg>
-            Outlook (.ics)
+          <button onclick="openCalendar('outlook')" style="width:100%;text-align:left;padding:12px 16px;font-family:var(--font-body);font-size:14px;background:transparent;border:none;cursor:pointer;display:flex;align-items:center;gap:10px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" stroke="#1F1147" stroke-width="2"/><path d="M2 8l10 6 10-6" stroke="#1F1147" stroke-width="2"/></svg>Outlook (.ics)
           </button>
         </div>
       </div>
-
-      <!-- WhatsApp -->
-      <button onclick="sendWhatsapp()" style="flex:1; min-width:120px; height:48px; font-family:var(--font-display); font-weight:700; font-size:14px; background:#25D366; color:#fff; border:2px solid #25D366; border-radius:10px; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:8px; box-shadow:4px 4px 0 var(--ink);">
+      <button onclick="sendWhatsapp()" style="flex:1;min-width:120px;height:48px;font-family:var(--font-display);font-weight:700;font-size:14px;background:#25D366;color:#fff;border:2px solid #25D366;border-radius:10px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:4px 4px 0 var(--ink);">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
         Save the date
       </button>
-
-      <!-- Slack -->
-      <button onclick="sendSlack()" style="flex:1; min-width:120px; height:48px; font-family:var(--font-display); font-weight:700; font-size:14px; background:#4A154B; color:#fff; border:2px solid #4A154B; border-radius:10px; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:8px; box-shadow:4px 4px 0 var(--ink);">
+      <button onclick="sendSlack()" style="flex:1;min-width:120px;height:48px;font-family:var(--font-display);font-weight:700;font-size:14px;background:#4A154B;color:#fff;border:2px solid #4A154B;border-radius:10px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:4px 4px 0 var(--ink);">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zM8.834 6.313a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zM18.956 8.834a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zM17.688 8.834a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zM15.165 18.956a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zM15.165 17.688a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"/></svg>
         Save the date
       </button>
-
     </div>
 
     <div style="margin-top:20px;">
@@ -270,92 +239,108 @@
 </footer>
 
 <script>
+  const SUPABASE_URL = 'https://tmcaqioutnpbacdrjmmq.supabase.co';
+  const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRtY2FxaW91dG5wYmFjZHJqbW1xIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODM3ODg2MDQsImV4cCI6MjA5OTM2NDYwNH0.ktgbnZ31HzteoRYDT1sUi6D5ylq3ADxHjST5cI0e5Pk';
+  const BASE_URL = 'https://romainleroy97.github.io/mon-petit-pot-de-depart';
+
+  let goldbookId = null;
+  let ownerKey = null;
+
   function formatDateFr(d){
-    return d.toLocaleDateString('fr-FR', { weekday:'long', day:'numeric', month:'long', year:'numeric' });
+    return d.toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
   }
 
-  let currentTunnelStep = 1;
-
+  let currentStep = 1;
   function goTunnelStep(n){
-    currentTunnelStep = n;
+    currentStep = n;
     [1,2].forEach(function(i){
-      const tp = document.getElementById('tp-' + i);
-      if(tp) tp.style.display = (i === n) ? 'block' : 'none';
-      const ts = document.getElementById('ts-' + i);
+      const tp = document.getElementById('tp-'+i);
+      if(tp) tp.style.display = (i===n)?'block':'none';
+      const ts = document.getElementById('ts-'+i);
       if(ts){
         ts.classList.remove('active','done');
-        if(i < n) ts.classList.add('done');
-        if(i === n) ts.classList.add('active');
+        if(i<n) ts.classList.add('done');
+        if(i===n) ts.classList.add('active');
       }
     });
     window.scrollTo(0,0);
   }
 
-  // ---- Privateaser ----
   function openPrivateaser(){
     const ville = document.getElementById('v-ville').value.trim();
-    if(!ville){ alert('Entre d\'abord ta ville ou ton quartier.'); return; }
+    if(!ville){ alert('Entre d\'abord ta ville.'); return; }
     document.getElementById('venue-searching').style.display = 'block';
-    fetch('https://nominatim.openstreetmap.org/search?q=' + encodeURIComponent(ville + ', France') + '&format=json&limit=1')
+    fetch('https://nominatim.openstreetmap.org/search?q='+encodeURIComponent(ville+', France')+'&format=json&limit=1')
       .then(function(r){ return r.json(); })
       .then(function(data){
         document.getElementById('venue-searching').style.display = 'none';
-        if(data && data.length > 0){
-          const lat = data[0].lat;
-          const lon = data[0].lon;
-          const url = 'https://www.privateaser.com/search?latitude-centre=' + lat + '&longitude-centre=' + lon + '&rayon=2000&universe=bar&occasion=afterwork_pro';
-          window.open(url, '_blank');
+        if(data && data.length>0){
+          window.open('https://www.privateaser.com/search?latitude-centre='+data[0].lat+'&longitude-centre='+data[0].lon+'&rayon=2000&universe=bar&occasion=afterwork_pro','_blank');
         } else {
-          alert('Ville introuvable. Essaie "Paris", "Lyon 2e", ou un nom de quartier plus simple.');
+          alert('Ville introuvable. Essaie un nom plus simple.');
         }
       })
       .catch(function(){
         document.getElementById('venue-searching').style.display = 'none';
-        window.open('https://www.privateaser.com/search?latitude-centre=48.8566&longitude-centre=2.3522&rayon=2000&universe=bar&occasion=afterwork_pro', '_blank');
+        window.open('https://www.privateaser.com/search?latitude-centre=48.8566&longitude-centre=2.3522&rayon=2000&universe=bar&occasion=afterwork_pro','_blank');
       });
   }
 
   function syncLieuToInvite(){
-    const lieu = document.getElementById('v-lieu-choisi').value;
-    document.getElementById('i-lieu').value = lieu;
+    document.getElementById('i-lieu').value = document.getElementById('v-lieu-choisi').value;
     updateInvite();
   }
 
-  // ---- Invitation ----
   function updateInvite(){
     const prenom = document.getElementById('i-prenom').value.trim() || '[Ton prénom]';
     const lieu = document.getElementById('i-lieu').value.trim() || '[Lieu à venir]';
     const dateStr = document.getElementById('i-date').value;
     const heure = document.getElementById('i-heure').value || '18:30';
     const mot = document.getElementById('i-mot').value.trim();
-    const dateFormatee = dateStr ? formatDateFr(new Date(dateStr + 'T00:00:00')) : '[date]';
-    document.getElementById('invite-title').textContent = prenom + ' vous invite';
-    let details = '<strong>' + dateFormatee + '</strong> à <strong>' + heure + '</strong><br><strong>' + lieu + '</strong>';
-    if(mot){ details += '<br><br><em style="font-family:var(--font-hand); font-size:20px;">« ' + mot + ' »</em>'; }
+    const dateFormatee = dateStr ? formatDateFr(new Date(dateStr+'T00:00:00')) : '[date]';
+    document.getElementById('invite-title').textContent = prenom+' vous invite';
+    let details = '<strong>'+dateFormatee+'</strong> à <strong>'+heure+'</strong><br><strong>'+lieu+'</strong>';
+    if(mot){ details += '<br><br><em style="font-family:var(--font-hand);font-size:20px;">« '+mot+' »</em>'; }
     document.getElementById('invite-details').innerHTML = details;
   }
 
+  function getCalInfos(){
+    return {
+      prenom: document.getElementById('i-prenom').value.trim() || 'Pot de départ',
+      lieu: document.getElementById('i-lieu').value.trim() || '',
+      dateStr: document.getElementById('i-date').value,
+      heure: document.getElementById('i-heure').value || '18:30',
+      mot: document.getElementById('i-mot').value.trim()
+    };
+  }
+
+  function buildInviteUrl(){
+    const { prenom, lieu, dateStr, heure, mot } = getCalInfos();
+    const params = new URLSearchParams();
+    if(prenom) params.set('prenom', prenom);
+    if(dateStr) params.set('date', dateStr);
+    if(heure) params.set('heure', heure);
+    if(lieu) params.set('lieu', lieu);
+    if(mot) params.set('mot', mot);
+    if(goldbookId) params.set('goldbook', goldbookId);
+    return BASE_URL + '/invite/?' + params.toString();
+  }
+
   function copyInviteText(){
-    const prenom = document.getElementById('i-prenom').value.trim() || '[ton prénom]';
-    const lieu = document.getElementById('i-lieu').value.trim() || '[lieu]';
-    const dateStr = document.getElementById('i-date').value;
-    const heure = document.getElementById('i-heure').value || '18:30';
-    const mot = document.getElementById('i-mot').value.trim();
-    const dateFormatee = dateStr ? formatDateFr(new Date(dateStr + 'T00:00:00')) : '[date]';
-    let text = '🎉 Pot de départ de ' + prenom + '\n\n';
-    text += 'Le ' + dateFormatee + ' à ' + heure + '\n';
-    text += lieu + '\n';
-    if(mot){ text += '\n« ' + mot + ' »\n'; }
+    const { prenom, lieu, dateStr, heure, mot } = getCalInfos();
+    const dateFormatee = dateStr ? formatDateFr(new Date(dateStr+'T00:00:00')) : '[date]';
+    let text = '🎉 Pot de départ de '+prenom+'\n\n';
+    text += 'Le '+dateFormatee+' à '+heure+'\n'+lieu+'\n';
+    if(mot){ text += '\n« '+mot+' »\n'; }
+    if(goldbookId){ text += '\n✍️ Laisse un mot : '+BASE_URL+'/recommend/?id='+goldbookId+'\n'; }
     text += '\nPasse faire coucou !';
     navigator.clipboard.writeText(text).then(function(){
       const btn = document.getElementById('copy-invite-btn');
-      const orig = btn.textContent;
-      btn.textContent = 'Copié !';
+      const orig = btn.textContent; btn.textContent = 'Copié !';
       setTimeout(function(){ btn.textContent = orig; }, 1500);
     });
   }
 
-  // ---- Calendrier ----
   function toggleCalDropdown(){
     const dd = document.getElementById('cal-dropdown');
     const arrow = document.getElementById('cal-arrow');
@@ -375,65 +360,36 @@
     }
   }
 
-  function getCalInfos(){
-    return {
-      prenom: document.getElementById('i-prenom').value.trim() || 'Pot de départ',
-      lieu: document.getElementById('i-lieu').value.trim() || '',
-      dateStr: document.getElementById('i-date').value,
-      heure: document.getElementById('i-heure').value || '18:30',
-      mot: document.getElementById('i-mot').value.trim()
-    };
-  }
-
   function openCalendar(type){
     document.getElementById('cal-dropdown').style.display = 'none';
     document.getElementById('cal-arrow').textContent = '▾';
     const { prenom, lieu, dateStr, heure, mot } = getCalInfos();
     if(!dateStr){ alert('Remplis d\'abord la date du pot.'); return; }
-    const title = encodeURIComponent('Pot de départ de ' + prenom);
-    const details = encodeURIComponent((mot ? mot + '\n\n' : '') + (lieu ? 'Lieu : ' + lieu : ''));
-    const location = encodeURIComponent(lieu);
     const [year, month, day] = dateStr.split('-');
     const [hh, mm] = heure.split(':');
-    const dtStart = year + month + day + 'T' + hh + mm + '00';
-    const endHour = String(parseInt(hh) + 2).padStart(2, '0');
-    const dtEnd = year + month + day + 'T' + endHour + mm + '00';
+    const dtStart = year+month+day+'T'+hh+mm+'00';
+    const endHour = String(parseInt(hh)+2).padStart(2,'0');
+    const dtEnd = year+month+day+'T'+endHour+mm+'00';
+    let desc = mot || '';
+    if(goldbookId){ desc += (desc ? '\n\n' : '') + 'Laisse un mot : '+BASE_URL+'/recommend/?id='+goldbookId; }
     if(type === 'google'){
-      window.open('https://calendar.google.com/calendar/render?action=TEMPLATE&text=' + title + '&dates=' + dtStart + '/' + dtEnd + '&details=' + details + '&location=' + location, '_blank');
+      window.open('https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent('Pot de départ de '+prenom)+'&dates='+dtStart+'/'+dtEnd+'&details='+encodeURIComponent(desc)+'&location='+encodeURIComponent(lieu),'_blank');
     } else {
-      const ics = ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Mon petit pot de départ//FR','BEGIN:VEVENT','DTSTART:' + dtStart,'DTEND:' + dtEnd,'SUMMARY:Pot de départ de ' + prenom,'LOCATION:' + lieu,'DESCRIPTION:' + (mot || ''),'END:VEVENT','END:VCALENDAR'].join('\r\n');
-      const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+      const ics = ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Mon petit pot de départ//FR','BEGIN:VEVENT','DTSTART:'+dtStart,'DTEND:'+dtEnd,'SUMMARY:Pot de départ de '+prenom,'LOCATION:'+lieu,'DESCRIPTION:'+desc,'END:VEVENT','END:VCALENDAR'].join('\r\n');
+      const blob = new Blob([ics],{type:'text/calendar;charset=utf-8'});
       const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url; a.download = 'pot-de-depart.ics';
-      document.body.appendChild(a); a.click();
-      document.body.removeChild(a); URL.revokeObjectURL(url);
+      const a = document.createElement('a'); a.href = url; a.download = 'pot-de-depart.ics';
+      document.body.appendChild(a); a.click(); document.body.removeChild(a); URL.revokeObjectURL(url);
     }
   }
 
-  // ---- WhatsApp ----
   function sendWhatsapp(){
-    const { prenom, lieu, dateStr, heure, mot } = getCalInfos();
-    const params = new URLSearchParams();
-    if(prenom) params.set('prenom', prenom);
-    if(dateStr) params.set('date', dateStr);
-    if(heure) params.set('heure', heure);
-    if(lieu) params.set('lieu', lieu);
-    if(mot) params.set('mot', mot);
-    const inviteUrl = 'https://romainleroy97.github.io/mon-petit-pot-de-depart/invite/?' + params.toString();
-    window.open('https://wa.me/?text=' + encodeURIComponent(inviteUrl), '_blank');
+    const url = 'https://wa.me/?text='+encodeURIComponent(buildInviteUrl());
+    window.open(url,'_blank');
   }
 
-  // ---- Slack ----
   function sendSlack(){
-    const { prenom, lieu, dateStr, heure, mot } = getCalInfos();
-    const params = new URLSearchParams();
-    if(prenom) params.set('prenom', prenom);
-    if(dateStr) params.set('date', dateStr);
-    if(heure) params.set('heure', heure);
-    if(lieu) params.set('lieu', lieu);
-    if(mot) params.set('mot', mot);
-    const inviteUrl = 'https://romainleroy97.github.io/mon-petit-pot-de-depart/invite/?' + params.toString();
+    const inviteUrl = buildInviteUrl();
     navigator.clipboard.writeText(inviteUrl).then(function(){
       showToast('Lien copié ! Colle-le dans Slack 👍');
     }).catch(function(){});
@@ -441,26 +397,81 @@
   }
 
   function showToast(msg){
-    let toast = document.getElementById('slack-toast');
+    let toast = document.getElementById('toast');
     if(!toast){
-      toast = document.createElement('div');
-      toast.id = 'slack-toast';
-      toast.style.cssText = 'position:fixed; bottom:24px; left:50%; transform:translateX(-50%); background:var(--ink); color:var(--light-text); font-family:var(--font-display); font-weight:600; font-size:14px; padding:12px 24px; border-radius:100px; z-index:999; box-shadow:0 4px 20px rgba(0,0,0,.3); transition:opacity .3s ease;';
+      toast = document.createElement('div'); toast.id = 'toast';
+      toast.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--light-text);font-family:var(--font-display);font-weight:600;font-size:14px;padding:12px 24px;border-radius:100px;z-index:999;box-shadow:0 4px 20px rgba(0,0,0,.3);transition:opacity .3s ease;';
       document.body.appendChild(toast);
     }
-    toast.textContent = msg;
-    toast.style.opacity = '1';
-    clearTimeout(toast._timeout);
-    toast._timeout = setTimeout(function(){ toast.style.opacity = '0'; }, 3000);
+    toast.textContent = msg; toast.style.opacity = '1';
+    clearTimeout(toast._t);
+    toast._t = setTimeout(function(){ toast.style.opacity = '0'; }, 3000);
+  }
+
+  // ---- Livre d'or ----
+  async function createGoldbook(){
+    const prenom = document.getElementById('i-prenom').value.trim();
+    if(!prenom){ alert('Remplis d\'abord ton prénom dans le formulaire d\'invitation.'); return; }
+
+    const btn = document.getElementById('goldbook-create-btn');
+    btn.textContent = 'Création en cours…'; btn.disabled = true;
+
+    const key = Math.random().toString(36).substr(2,12) + Math.random().toString(36).substr(2,8);
+
+    try {
+      const res = await fetch(SUPABASE_URL+'/rest/v1/livres_d_or', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': SUPABASE_KEY,
+          'Authorization': 'Bearer '+SUPABASE_KEY,
+          'Prefer': 'return=representation'
+        },
+        body: JSON.stringify({ prenom, owner_key: key })
+      });
+      if(!res.ok) throw new Error();
+      const data = await res.json();
+      goldbookId = data[0].id;
+      ownerKey = key;
+
+      const recommendUrl = BASE_URL+'/recommend/?id='+goldbookId;
+      const manageUrl = BASE_URL+'/manage/?id='+goldbookId+'&key='+ownerKey;
+
+      document.getElementById('recommend-url-display').textContent = recommendUrl;
+      document.getElementById('manage-url-display').textContent = manageUrl;
+      document.getElementById('goldbook-inactive').style.display = 'none';
+      document.getElementById('goldbook-active').style.display = 'block';
+
+    } catch(e) {
+      alert('Erreur lors de la création du livre d\'or. Vérifie ta connexion et réessaie.');
+      btn.textContent = 'Activer mon livre d\'or'; btn.disabled = false;
+    }
+  }
+
+  function copyRecommendUrl(){
+    const text = document.getElementById('recommend-url-display').textContent;
+    navigator.clipboard.writeText(text).then(function(){
+      const btn = document.getElementById('copy-recommend-btn');
+      const orig = btn.textContent; btn.textContent = 'Copié !';
+      setTimeout(function(){ btn.textContent = orig; }, 1500);
+    });
+  }
+
+  function copyManageUrl(){
+    const text = document.getElementById('manage-url-display').textContent;
+    navigator.clipboard.writeText(text).then(function(){
+      const btn = document.getElementById('copy-manage-btn');
+      const orig = btn.textContent; btn.textContent = 'Copié !';
+      setTimeout(function(){ btn.textContent = orig; }, 1500);
+    });
   }
 
   // Init date
   const iDate = document.getElementById('i-date');
   if(iDate){
     const t = new Date();
-    iDate.value = t.getFullYear() + '-' + String(t.getMonth()+1).padStart(2,'0') + '-' + String(t.getDate()).padStart(2,'0');
+    iDate.value = t.getFullYear()+'-'+String(t.getMonth()+1).padStart(2,'0')+'-'+String(t.getDate()).padStart(2,'0');
   }
 </script>
-
 </body>
 </html>

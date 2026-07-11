@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="page-title">Recommandations — Mon petit pot de départ</title>
+<meta id="og-title" property="og:title" content="Recommandations LinkedIn">
+<meta id="og-desc" property="og:description" content="Les recommandations de mes collègues">
+<meta property="og:image" content="https://romainleroy97.github.io/mon-petit-pot-de-depart/og-image.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-dark:#1F1147; --bg-paper:#FFF4E3; --coral:#FF5A36; --yellow:#FFC93C;
+    --pink:#FF3D8A; --teal:#00B88A; --ink:#1F1147; --paper-text:#4A3D78;
+    --light-text:#FFF4E3; --font-display:'Bricolage Grotesque',sans-serif;
+    --font-body:'Inter',sans-serif; --font-hand:'Caveat',cursive;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:var(--font-body);background:var(--bg-paper);color:var(--ink);-webkit-font-smoothing:antialiased;}
+  .hero{background:var(--bg-dark);color:var(--light-text);padding:64px 24px 56px;text-align:center;}
+  .eyebrow{font-family:var(--font-hand);font-size:24px;color:var(--yellow);margin-bottom:10px;}
+  h1{font-family:var(--font-display);font-weight:800;font-size:clamp(28px,5vw,46px);line-height:1.1;margin-bottom:12px;}
+  .hero-sub{font-size:17px;color:rgba(255,244,227,.8);}
+  main{max-width:720px;margin:0 auto;padding:48px 24px 80px;}
+  .recos-grid{display:flex;flex-direction:column;gap:20px;}
+  .reco-card{background:#fff;border:2px solid var(--ink);border-radius:16px;padding:24px 26px;box-shadow:6px 6px 0 var(--ink);position:relative;}
+  .reco-card::before{content:'';position:absolute;top:-10px;left:30px;width:16px;height:16px;border-radius:50%;background:var(--coral);border:2px solid var(--ink);}
+  .reco-card:nth-child(2)::before{background:var(--teal);}
+  .reco-card:nth-child(3)::before{background:var(--yellow);}
+  .reco-card:nth-child(4)::before{background:var(--pink);}
+  .quote{font-family:var(--font-hand);font-size:56px;color:var(--coral);line-height:.8;margin-bottom:8px;display:block;}
+  .reco-text{font-size:16px;line-height:1.7;color:var(--ink);margin-bottom:16px;}
+  .reco-author{font-family:var(--font-display);font-weight:700;font-size:14px;}
+  .reco-role{font-size:13px;color:var(--paper-text);margin-top:2px;}
+  footer{background:var(--bg-dark);color:rgba(255,244,227,.5);padding:32px 24px;text-align:center;font-size:13px;}
+  footer a{color:rgba(255,244,227,.7);text-decoration:underline;}
+  .not-published{text-align:center;padding:60px 24px;color:var(--paper-text);}
+  .not-published .emoji{font-size:48px;margin-bottom:16px;}
+  .not-published h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:22px;margin-bottom:8px;color:var(--ink);}
+  @media(max-width:500px){main{padding:32px 18px 60px;}}
+</style>
+</head>
+<body>
+
+<div id="loading">
+  <div class="hero">
+    <p class="eyebrow">Chargement…</p>
+    <h1>Recommandations</h1>
+  </div>
+</div>
+
+<div id="app" style="display:none;">
+  <div class="hero">
+    <p class="eyebrow" id="hero-eyebrow">Ce que mes collègues disent</p>
+    <h1 id="hero-title">Recommandations</h1>
+    <p class="hero-sub" id="hero-sub"></p>
+  </div>
+  <main>
+    <div class="recos-grid" id="recos-grid"></div>
+  </main>
+</div>
+
+<div id="not-published" style="display:none;">
+  <main>
+    <div class="not-published">
+      <div class="emoji">⏳</div>
+      <h2>Cette page n'est pas encore publiée</h2>
+      <p>Son propriétaire n'a pas encore finalisé son livre d'or.</p>
+    </div>
+  </main>
+</div>
+
+<footer>
+  <p>Créé avec <a href="https://romainleroy97.github.io/mon-petit-pot-de-depart/">Mon petit pot de départ</a></p>
+</footer>
+
+<script>
+  const SUPABASE_URL = 'https://tmcaqioutnpbacdrjmmq.supabase.co';
+  const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRtY2FxaW91dG5wYmFjZHJqbW1xIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODM3ODg2MDQsImV4cCI6MjA5OTM2NDYwNH0.ktgbnZ31HzteoRYDT1sUi6D5ylq3ADxHjST5cI0e5Pk';
+
+  const params = new URLSearchParams(window.location.search);
+  const livreId = params.get('id');
+
+  async function init(){
+    if(!livreId){ showNotPublished(); return; }
+    try {
+      const res = await fetch(SUPABASE_URL+'/rest/v1/livres_d_or?id=eq.'+livreId+'&select=prenom,is_published', {
+        headers: { 'apikey': SUPABASE_KEY, 'Authorization': 'Bearer '+SUPABASE_KEY }
+      });
+      const data = await res.json();
+      if(!data || data.length === 0 || !data[0].is_published){ showNotPublished(); return; }
+
+      const prenom = data[0].prenom;
+      document.getElementById('page-title').textContent = 'Recommandations de '+prenom;
+      document.getElementById('og-title').setAttribute('content', 'Ce que mes collègues pensent de '+prenom);
+      document.getElementById('og-desc').setAttribute('content', 'Les recommandations laissées par les collègues de '+prenom+' lors de son pot de départ.');
+      document.getElementById('hero-title').textContent = prenom;
+      document.getElementById('hero-sub').textContent = 'Ce que mes collègues ont retenu de nos années passées ensemble.';
+
+      const recosRes = await fetch(SUPABASE_URL+'/rest/v1/recommandations?livre_d_or_id=eq.'+livreId+'&consented=eq.true&order=created_at.asc', {
+        headers: { 'apikey': SUPABASE_KEY, 'Authorization': 'Bearer '+SUPABASE_KEY }
+      });
+      const recos = await recosRes.json();
+
+      const grid = document.getElementById('recos-grid');
+      recos.forEach(function(r){
+        const card = document.createElement('div');
+        card.className = 'reco-card';
+        card.innerHTML =
+          '<span class="quote">"</span>'+
+          '<p class="reco-text">'+escHtml(r.texte)+'</p>'+
+          '<p class="reco-author">'+escHtml(r.auteur_nom)+'</p>'+
+          (r.auteur_role ? '<p class="reco-role">'+escHtml(r.auteur_role)+'</p>' : '');
+        grid.appendChild(card);
+      });
+
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('app').style.display = 'block';
+    } catch(e){
+      showNotPublished();
+    }
+  }
+
+  function showNotPublished(){
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('not-published').style.display = 'block';
+  }
+
+  function escHtml(str){
+    return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  init();
+</script>
+</body>
+</html>

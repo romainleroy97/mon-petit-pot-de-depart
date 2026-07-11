@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="page-title">Laisse un mot — Mon petit pot de départ</title>
+<meta property="og:title" content="Laisse un mot dans le livre d'or 🎉">
+<meta property="og:description" content="Quelqu'un que tu apprécies part — laisse-lui un mot.">
+<meta property="og:image" content="https://romainleroy97.github.io/mon-petit-pot-de-depart/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-dark:#1F1147; --bg-paper:#FFF4E3; --coral:#FF5A36; --yellow:#FFC93C;
+    --pink:#FF3D8A; --teal:#00B88A; --ink:#1F1147; --paper-text:#4A3D78;
+    --light-text:#FFF4E3; --font-display:'Bricolage Grotesque',sans-serif;
+    --font-body:'Inter',sans-serif; --font-hand:'Caveat',cursive;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:var(--font-body);background:var(--bg-dark);min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;-webkit-font-smoothing:antialiased;}
+  .card{background:#fff;border:2px solid var(--ink);border-radius:24px;padding:40px 36px;max-width:520px;width:100%;box-shadow:10px 10px 0 var(--ink);}
+  .pin{width:22px;height:22px;border-radius:50%;background:var(--teal);border:3px solid var(--ink);margin:0 auto 20px;display:block;}
+  h1{font-family:var(--font-display);font-weight:800;font-size:clamp(22px,4vw,30px);margin-bottom:6px;color:var(--ink);}
+  .sub{font-size:14px;color:var(--paper-text);margin-bottom:28px;}
+  .field{margin-bottom:16px;}
+  .field label{display:block;font-size:13px;font-weight:500;margin-bottom:6px;color:var(--ink);}
+  .field input, .field textarea{width:100%;border:2px solid var(--ink);border-radius:10px;padding:10px 14px;font-family:var(--font-body);font-size:15px;background:var(--bg-paper);color:var(--ink);}
+  .field input{height:44px;}
+  .field textarea{min-height:120px;resize:vertical;line-height:1.6;}
+  .field input:focus, .field textarea:focus{outline:3px solid var(--teal);outline-offset:1px;}
+  .consent{display:flex;align-items:flex-start;gap:10px;background:var(--bg-paper);border:2px solid var(--ink);border-radius:12px;padding:14px;margin-bottom:20px;}
+  .consent input{width:18px;height:18px;flex-shrink:0;margin-top:2px;accent-color:var(--teal);}
+  .consent label{font-size:13px;color:var(--paper-text);line-height:1.5;}
+  .btn{font-family:var(--font-display);font-weight:700;font-size:15px;background:var(--teal);color:#fff;border:2px solid var(--ink);border-radius:10px;padding:0 28px;height:48px;cursor:pointer;width:100%;display:flex;align-items:center;justify-content:center;gap:8px;}
+  .btn:hover{background:var(--coral);border-color:var(--coral);}
+  .btn:disabled{opacity:.5;cursor:not-allowed;}
+  .count-badge{background:var(--bg-paper);border:2px solid var(--ink);border-radius:100px;padding:6px 16px;font-family:var(--font-display);font-weight:700;font-size:13px;display:inline-block;margin-bottom:20px;}
+  .success{text-align:center;}
+  .success .emoji{font-size:56px;margin-bottom:16px;}
+  .success h2{font-family:var(--font-display);font-weight:800;font-size:24px;margin-bottom:8px;}
+  .success p{font-size:15px;color:var(--paper-text);}
+  .error-state{text-align:center;color:var(--light-text);}
+  .error-state h2{font-family:var(--font-display);font-weight:800;font-size:22px;margin-bottom:8px;}
+  .footer-link{margin-top:28px;font-size:13px;color:rgba(255,244,227,.5);text-decoration:none;}
+  .footer-link:hover{color:rgba(255,244,227,.8);}
+  @media(max-width:500px){.card{padding:28px 20px;}}
+</style>
+</head>
+<body>
+
+<div id="loading" style="color:var(--light-text);font-family:'Bricolage Grotesque',sans-serif;font-size:18px;">Chargement…</div>
+
+<div id="app" style="display:none;width:100%;max-width:520px;display:flex;flex-direction:column;align-items:center;">
+  <div class="card" id="main-card">
+    <span class="pin"></span>
+
+    <div id="form-state">
+      <h1 id="card-title">Laisse un mot pour [prénom]</h1>
+      <p class="sub" id="card-sub">Quelques lignes sur ce que tu as apprécié bosser avec cette personne. Ce témoignage pourra être publié sur son LinkedIn.</p>
+
+      <div class="count-badge" id="count-badge">💬 Sois le premier à laisser un mot</div>
+
+      <div class="field">
+        <label for="auteur-nom">Ton prénom et nom</label>
+        <input type="text" id="auteur-nom" placeholder="Ex : Julie Martin">
+      </div>
+      <div class="field">
+        <label for="auteur-role">Ton lien avec cette personne</label>
+        <input type="text" id="auteur-role" placeholder="Ex : Manager, collègue de projet, stagiaire…">
+      </div>
+      <div class="field">
+        <label for="texte">Ton message</label>
+        <textarea id="texte" placeholder="Ce que tu as apprécié, un souvenir, une qualité qui marque…"></textarea>
+      </div>
+
+      <div class="consent">
+        <input type="checkbox" id="consent">
+        <label for="consent">J'accepte que ce témoignage soit rendu public sur la page LinkedIn de cette personne. Mon nom et mon rôle seront visibles.</label>
+      </div>
+
+      <button class="btn" onclick="submitReco()">Envoyer mon mot ✍️</button>
+    </div>
+
+    <div id="success-state" class="success" style="display:none;">
+      <div class="emoji">🎉</div>
+      <h2>Merci, c'est envoyé !</h2>
+      <p>Ton message a bien été reçu. <span id="prenom-display"></span> le verra bientôt.</p>
+    </div>
+  </div>
+
+  <a class="footer-link" href="https://romainleroy97.github.io/mon-petit-pot-de-depart/">← Organise ton propre pot de départ</a>
+</div>
+
+<div id="error-state" style="display:none;" class="error-state">
+  <p style="font-size:48px;margin-bottom:16px;">🤔</p>
+  <h2>Livre d'or introuvable</h2>
+  <p style="color:rgba(255,244,227,.7);">Ce lien semble incorrect ou expiré.</p>
+</div>
+
+<script>
+  const SUPABASE_URL = 'https://tmcaqioutnpbacdrjmmq.supabase.co';
+  const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRtY2FxaW91dG5wYmFjZHJqbW1xIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODM3ODg2MDQsImV4cCI6MjA5OTM2NDYwNH0.ktgbnZ31HzteoRYDT1sUi6D5ylq3ADxHjST5cI0e5Pk';
+
+  const params = new URLSearchParams(window.location.search);
+  const livreId = params.get('id');
+  let prenom = '';
+
+  async function init(){
+    if(!livreId){ showError(); return; }
+    try {
+      const res = await fetch(SUPABASE_URL+'/rest/v1/livres_d_or?id=eq.'+livreId+'&select=prenom', {
+        headers: { 'apikey': SUPABASE_KEY, 'Authorization': 'Bearer '+SUPABASE_KEY }
+      });
+      const data = await res.json();
+      if(!data || data.length === 0){ showError(); return; }
+      prenom = data[0].prenom;
+      document.getElementById('page-title').textContent = 'Laisse un mot pour '+prenom;
+      document.getElementById('card-title').textContent = 'Laisse un mot pour '+prenom+' ✍️';
+      document.getElementById('card-sub').textContent = 'Quelques lignes sur ce que tu as apprécié bosser avec '+prenom+'. Ce témoignage pourra être publié sur son LinkedIn.';
+      document.getElementById('prenom-display').textContent = prenom;
+
+      // Compter les messages existants
+      const countRes = await fetch(SUPABASE_URL+'/rest/v1/recommandations?livre_d_or_id=eq.'+livreId+'&select=id', {
+        headers: { 'apikey': SUPABASE_KEY, 'Authorization': 'Bearer '+SUPABASE_KEY }
+      });
+      const countData = await countRes.json();
+      const n = countData.length;
+      const badge = document.getElementById('count-badge');
+      if(n === 0) badge.textContent = '💬 Sois le premier à laisser un mot';
+      else if(n === 1) badge.textContent = '💬 1 personne a déjà laissé un mot';
+      else badge.textContent = '💬 '+n+' personnes ont déjà laissé un mot';
+
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('app').style.display = 'flex';
+    } catch(e){
+      showError();
+    }
+  }
+
+  async function submitReco(){
+    const nom = document.getElementById('auteur-nom').value.trim();
+    const role = document.getElementById('auteur-role').value.trim();
+    const texte = document.getElementById('texte').value.trim();
+    const consented = document.getElementById('consent').checked;
+
+    if(!nom){ alert('Indique ton prénom et ton nom.'); return; }
+    if(!texte){ alert('Écris quelques lignes avant d\'envoyer.'); return; }
+    if(!consented){ alert('Coche la case de consentement pour continuer.'); return; }
+
+    const btn = document.querySelector('.btn');
+    btn.textContent = 'Envoi en cours…'; btn.disabled = true;
+
+    try {
+      const res = await fetch(SUPABASE_URL+'/rest/v1/recommandations', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': SUPABASE_KEY,
+          'Authorization': 'Bearer '+SUPABASE_KEY,
+          'Prefer': 'return=minimal'
+        },
+        body: JSON.stringify({ livre_d_or_id: livreId, auteur_nom: nom, auteur_role: role, texte, consented: true })
+      });
+      if(!res.ok) throw new Error();
+      document.getElementById('form-state').style.display = 'none';
+      document.getElementById('success-state').style.display = 'block';
+    } catch(e){
+      alert('Erreur lors de l\'envoi. Réessaie.');
+      btn.textContent = 'Envoyer mon mot ✍️'; btn.disabled = false;
+    }
+  }
+
+  function showError(){
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('error-state').style.display = 'block';
+  }
+
+  init();
+</script>
+</body>
+</html>
