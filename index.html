@@ -213,11 +213,11 @@
   .reco-preview{background:var(--bg-paper); border:2px dashed var(--ink); border-radius:12px; padding:20px; font-size:14px; white-space:pre-wrap; line-height:1.7; margin-top:16px;}
 
   /* Tunnel étape 4 */
-  .tunnel-step{display:flex; flex-direction:column; align-items:center; gap:4px; flex:1; padding:12px 8px; border-radius:12px; cursor:pointer; border:2px solid var(--ink); background:#fff; transition:background .15s ease;}
+  .tunnel-step{display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; flex:1; padding:12px 8px; border-radius:12px; cursor:pointer; border:2px solid var(--ink); background:#fff; transition:background .15s ease; height:80px; text-align:center;}
   .tunnel-step.active{background:var(--ink); color:var(--light-text);}
   .tunnel-step.done{background:var(--teal); color:#fff;}
   .tunnel-num{font-family:var(--font-display); font-weight:800; font-size:18px; line-height:1;}
-  .tunnel-label{font-size:12px; font-weight:500;}
+  .tunnel-label{font-size:11px; font-weight:500; line-height:1.3;}
   .tunnel-arrow{font-size:18px; color:var(--paper-text); padding:0 8px; flex-shrink:0;}
   .tunnel-panel{max-width:960px; margin:0 auto; width:100%;}
   .goldbook-entry{position:relative; padding-right:44px;}
@@ -1240,6 +1240,23 @@
   }
 
   // ---- WhatsApp save the date ----
+  function sendWhatsapp(){
+    const { prenom, lieu, dateStr, heure, mot } = getCalInfos();
+
+    const base = 'https://romainleroy97.github.io/mon-petit-pot-de-depart/invite/';
+    const params = new URLSearchParams();
+    if(prenom) params.set('prenom', prenom);
+    if(dateStr) params.set('date', dateStr);
+    if(heure) params.set('heure', heure);
+    if(lieu) params.set('lieu', lieu);
+    if(mot) params.set('mot', mot);
+    const inviteUrl = base + '?' + params.toString();
+
+    const url = 'https://wa.me/?text=' + encodeURIComponent(inviteUrl);
+    window.open(url, '_blank');
+  }
+
+  // ---- Slack save the date ----
   function sendSlack(){
     const { prenom, lieu, dateStr, heure, mot } = getCalInfos();
 
